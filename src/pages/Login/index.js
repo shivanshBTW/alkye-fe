@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from '../../components/commonComponents/Button'
 import TextField from '../../components/commonComponents/TextField'
 import {
@@ -14,8 +14,32 @@ import {
   signupSectionContainer
 } from './style'
 import loginPageLogo from '../../assets/login/loginPageLogo.svg'
+import { toast } from 'react-toastify'
+import { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { loginUser } from '../../redux/actions/login'
 
-function Login () {
+function Login (props) {
+  const { isLoggedIn, loginUser } = props
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const handleLogin = () => {
+    if (!email || !password) {
+      toast.error('Please enter email and password')
+    } else {
+      loginUser({ email, password })
+      toast.success('Login successful')
+    }
+  }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/')
+    }
+  }, [isLoggedIn, navigate])
+
   return (
     <div css={loginRoot}>
       <div css={centerSectionContainer}>
@@ -29,21 +53,27 @@ function Login () {
             <div>
               <TextField
                 type='text'
+                name='email'
                 label='Email or Username'
                 placeholder='Enter your email or username'
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 fullWidth
               />
             </div>
             <div>
               <TextField
                 type='password'
+                name='password'
                 label='Password'
                 placeholder='Enter your password'
+                value={password}
+                onChange={e => setPassword(e.target.value)}
                 fullWidth
               />
             </div>
             <div>
-              <Button label='Login now' fullWidth />
+              <Button label='Login now' fullWidth onClick={handleLogin} />
             </div>
             <div css={signupSectionContainer}>
               Not registered yet?{' '}
@@ -58,4 +88,17 @@ function Login () {
   )
 }
 
-export default Login
+const mapStateToProps = ({ login: { isLoggedIn, currentUserData } = {} }) => {
+  return {
+    isLoggedIn,
+    currentUserData
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loginUser: data => dispatch(loginUser(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

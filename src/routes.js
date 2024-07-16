@@ -8,10 +8,11 @@ import PrivateRoute from './utils/PrivateRoute'
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <App />,
     children: [
       {
         path: '',
-        element: <PrivateRoute parentComponent={App} />,
+        element: <PrivateRoute />,
         children: [
           {
             path: '',

@@ -1,7 +1,10 @@
+import { useSelector } from 'react-redux'
 import { Navigate, Outlet } from 'react-router-dom'
 
 const PrivateRoute = ({ parentComponent: ParentComponent }) => {
-  let auth = { token: true }
+  const isLoggedIn = useSelector(({ login: { isLoggedIn } = {} }) => isLoggedIn)
+
+  let auth = { token: isLoggedIn }
 
   const outlet = ParentComponent ? (
     <ParentComponent>
