@@ -1,11 +1,10 @@
-import Typography from '@mui/material/Typography'
 import './style.scss'
 
 function Home () {
   return (
     <div className='home-root'>
       Home
-      <Typography paragraph>
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus
         non enim praesent elementum facilisis leo vel. Risus at ultrices mi
@@ -18,8 +17,8 @@ function Home () {
         tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum
         varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt.
         Lorem donec massa sapien faucibus et molestie ac.
-      </Typography>
-      <Typography paragraph>
+      </p>
+      <p>
         Consequat mauris nunc congue nisi vitae suscipit. Fringilla est
         ullamcorper eget nulla facilisi etiam dignissim diam. Pulvinar elementum
         integer enim neque volutpat ac tincidunt. Ornare suspendisse sed nisi
@@ -32,7 +31,7 @@ function Home () {
         Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra
         maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin
         aliquam ultrices sagittis orci a.
-      </Typography>
+      </p>
     </div>
   )
 }
