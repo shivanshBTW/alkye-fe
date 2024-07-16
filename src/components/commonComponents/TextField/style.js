@@ -12,6 +12,10 @@ export const labelStyle = css`
   margin-bottom: 10px;
 `
 
+export const inputComponentContainer = css`
+  position: relative;
+`
+
 export const inputStyle = fullWidth => css`
   padding: 12px;
   background: ${theme.paper};
@@ -34,6 +38,14 @@ export const inputStyle = fullWidth => css`
     : ''}
 
   &::placeholder {
-    color: ${theme.placeholderTextColor};
+    color: ${theme.tertiaryTextColor};
   }
+`
+
+export const viewPasswordToggleStyle = css`
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 `

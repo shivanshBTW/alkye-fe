@@ -6,7 +6,9 @@ export const theme = {
 
   mainTextColor: '#FFFFFF',
   secondaryTextColor: '#6B6C70',
-  placeholderTextColor: '#7F8084',
+  tertiaryTextColor: '#7F8084',
+
+  linkColor: '#c6c7c9',
 
   primaryButtonColor: '#4A96FF'
 }
