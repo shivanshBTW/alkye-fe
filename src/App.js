@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
 import { Outlet } from 'react-router-dom'
+import { appRoot } from './appStyle'
 
 function App () {
   return (
-    <div>
+    <div css={appRoot}>
       <Outlet />
     </div>
   )
