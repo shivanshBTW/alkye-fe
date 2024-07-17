@@ -9,18 +9,21 @@ import {
 } from './style.js'
 import { fetchPosts } from './fetchData.js'
 import PostCard from '../../components/Home/PostCard/index.js'
+import { connect } from 'react-redux'
+import { updatePostsList } from '../../redux/actions/posts.js'
 
-function Home () {
-  const [postList, setPostList] = useState([])
+function Home (props) {
+  const { postList, setPostList } = props
 
   const handleFetchData = useCallback(async () => {
     let response = await fetchPosts()
     setPostList(response?.posts)
-  }, [])
+  }, [setPostList])
 
   useEffect(() => {
     handleFetchData()
   }, [handleFetchData])
+
   return (
     <div css={homeRoot}>
       <div css={greetingText}>Hello Jane</div>
@@ -38,4 +41,14 @@ function Home () {
   )
 }
 
-export default Home
+const mapStateToProps = ({ posts: { postList } = {} }) => {
+  return { postList }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    setPostList: data => dispatch(updatePostsList(data))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
