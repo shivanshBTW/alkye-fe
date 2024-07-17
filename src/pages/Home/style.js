@@ -2,13 +2,18 @@ import { css } from '@emotion/react'
 import { theme } from '../../config/themes/dark'
 
 export const homeRoot = css`
-  width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 700px;
   margin: 0 auto;
   padding: 70px 0;
 
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+  @media (max-width: 700px) {
+    padding: 70px 20px;
+  }
 `
 
 export const greetingText = css`
@@ -37,6 +42,11 @@ export const subtitleText = css`
   color: ${theme.tertiaryTextColor};
   margin-bottom: 25px;
   width: 580px;
+  box-sizing: border-box;
+  @media (max-width: 700px) {
+    width: 100%;
+    max-width: 580px;
+  }
 `
 
 export const postsSectionStyle = css`
