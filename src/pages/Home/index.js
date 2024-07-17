@@ -33,7 +33,7 @@ function Home () {
       <div css={postsSectionStyle}>
         <CreatePost />
         {postList.map(postData => (
-          <PostCard postData={postData} key={postData.id} />
+          <PostCard postData={postData} key={postData.uuidv4} />
         ))}
       </div>
     </div>

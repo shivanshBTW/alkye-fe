@@ -14,6 +14,43 @@ export const headingStyle = css`
   font-weight: 500;
   line-height: 21.78px;
   text-align: left;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`
+export const avatarImageContainer = css`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: ${theme.paper1};
+`
+
+export const avatarImageStyle = css`
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+`
+
+export const nameContainer = css``
+export const nameStyle = css`
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.36px;
+  text-align: left;
+  margin-bottom: 5px;
+  color: ${theme.posterNameColor};
+`
+
+export const timeContainer = css`
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  text-align: left;
+  color: ${theme.tertiaryTextColor};
 `
 
 export const inputContainerStyle = css`

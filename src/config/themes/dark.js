@@ -7,7 +7,7 @@ export const theme = {
   mainTextColor: '#FFFFFF',
   secondaryTextColor: '#6B6C70',
   tertiaryTextColor: '#7F8084',
-
+  posterNameColor: '#C5C7CA',
   linkColor: '#c6c7c9',
 
   primaryButtonColor: '#4A96FF'
