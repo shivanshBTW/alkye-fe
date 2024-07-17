@@ -16,8 +16,6 @@ function Home () {
   const handleFetchData = useCallback(async () => {
     let response = await fetchPosts()
     setPostList(response?.posts)
-    console.log('res', response)
-    console.log('res', response?.posts)
   }, [])
 
   useEffect(() => {
