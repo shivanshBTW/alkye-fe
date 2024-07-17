@@ -73,7 +73,9 @@ function Login (props) {
               />
             </div>
             <div>
-              <Button label='Login now' fullWidth onClick={handleLogin} />
+              <Button fullWidth onClick={handleLogin}>
+                Login now
+              </Button>
             </div>
             <div css={signupSectionContainer}>
               Not registered yet?{' '}
