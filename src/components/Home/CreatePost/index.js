@@ -30,6 +30,8 @@ function CreatePost (props) {
       random_date: new Date().toISOString()
     }
     dispatch(addPost(data))
+    setPostText('')
+    setSelectedEmoji('💬')
   }
 
   return (
