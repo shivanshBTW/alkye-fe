@@ -40,6 +40,7 @@ export const inputStyle = css`
   outline: none;
   border-radius: 8px;
   color: ${theme.mainTextColor};
+  resize: vertical;
 
   font-family: Inter;
   font-size: 16px;

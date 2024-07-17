@@ -19,7 +19,9 @@ function CreatePost (props) {
     <div css={createPostRoot}>
       <div css={headingStyle}>Create post</div>
       <div css={inputContainerStyle}>
-        <input
+        <textarea
+          name='message'
+          rows='1'
           type='text'
           placeholder='How are you feeling today?'
           css={inputStyle}
