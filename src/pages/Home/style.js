@@ -28,3 +28,9 @@ export const subtitleText = css`
   margin-bottom: 25px;
   width: 580px;
 `
+
+export const postsSectionStyle = css`
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`

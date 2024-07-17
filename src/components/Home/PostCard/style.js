@@ -6,8 +6,6 @@ export const createPostRoot = css`
   padding: 24px 20px;
   background-color: ${theme.paper};
   border-radius: 8px;
-  width: 100%;
-  box-sizing: border-box;
 `
 
 export const headingStyle = css`
@@ -20,26 +18,27 @@ export const headingStyle = css`
 
 export const inputContainerStyle = css`
   position: relative;
-  margin: 16px 0;
+  padding: 16px 0;
 `
 
 export const emojiSelectorButton = css`
   position: absolute;
   left: 15px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 32px;
 `
+// transform: translateY(-50%);
 
 export const inputStyle = css`
   width: 100%;
   box-sizing: border-box;
   background: ${theme.paper1};
-  padding: 31px 15px;
+  padding: 16px 15px;
+  min-height: 78px;
   padding-left: 80px;
   border: none;
   outline: none;
   border-radius: 8px;
-  color: ${theme.mainTextColor};
+  color: ${theme.tertiaryTextColor};
 
   font-family: Inter;
   font-size: 16px;
@@ -53,7 +52,19 @@ export const inputStyle = css`
 `
 
 export const buttonContainer = css`
-  text-align: right;
+  text-align: left;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.94px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: ${theme.tertiaryTextColor};
+  cursor: pointer;
+  &:hover {
+    color: ${theme.mainTextColor};
+  }
 `
 export const buttonStyle = css`
   padding: 12px 40px;

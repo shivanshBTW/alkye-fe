@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import Button from '../../commonComponents/Button'
 import {
   buttonContainer,
-  buttonStyle,
   createPostRoot,
   emojiSelectorButton,
   headingStyle,
@@ -11,32 +9,33 @@ import {
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
 import { useState } from 'react'
+import commentsSection from '../../../assets/commentsSection.svg'
 
-function CreatePost (props) {
+function PostCard (props) {
+  const { postData } = props
+  console.log('postData', postData)
+  const { body, reactions: { likes } = {} } = postData
   const [selectedEmoji, setSelectedEmoji] = useState('💬')
 
   return (
     <div css={createPostRoot}>
       <div css={headingStyle}>Create post</div>
       <div css={inputContainerStyle}>
-        <input
-          type='text'
-          placeholder='How are you feeling today?'
-          css={inputStyle}
-        />
+        <div css={inputStyle}>{body}</div>
         <div css={emojiSelectorButton}>
           <EmojiSelector
-            allowSelector
             selectedEmoji={selectedEmoji}
             setSelectedEmoji={setSelectedEmoji}
+            allowSelector={false}
           />
         </div>
       </div>
       <div css={buttonContainer}>
-        <Button style={buttonStyle}>Post</Button>
+        <img src={commentsSection} alt='' />
+        <span>{likes} comments</span>
       </div>
     </div>
   )
 }
 
-export default CreatePost
+export default PostCard
