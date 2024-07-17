@@ -1,7 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import EmojiPicker from 'emoji-picker-react'
 import Button from '../../commonComponents/Button'
-import TextField from '../../commonComponents/TextField'
 import {
   buttonContainer,
   buttonStyle,
@@ -12,8 +10,11 @@ import {
   inputStyle
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
+import { useState } from 'react'
 
 function CreatePost (props) {
+  const [selectedEmoji, setSelectedEmoji] = useState('💬')
+
   return (
     <div css={createPostRoot}>
       <div css={headingStyle}>Create post</div>
@@ -24,7 +25,10 @@ function CreatePost (props) {
           css={inputStyle}
         />
         <div css={emojiSelectorButton}>
-          <EmojiSelector />
+          <EmojiSelector
+            selectedEmoji={selectedEmoji}
+            setSelectedEmoji={setSelectedEmoji}
+          />
         </div>
       </div>
       <div css={buttonContainer}>
