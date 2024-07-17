@@ -3,16 +3,7 @@ const savedUserData = localStorage.getItem('currentUserData')
 const initialState = {
   isLoggedIn: !!savedUserData,
   currentUserData: JSON.parse(savedUserData) || {}
-  //   users: {}
 }
-
-// let users = {
-//   ['abc@gmail.com']: {
-//     username: 'abc',
-//     email: 'abc@gmail.com',
-//     password: '123456'
-//   }
-// }
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +13,13 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: true,
         currentUserData: action.payload
+      }
+    case 'LOGOUT_USER':
+      localStorage.removeItem('currentUserData')
+      return {
+        ...state,
+        isLoggedIn: false,
+        currentUserData: {}
       }
     default:
       return state

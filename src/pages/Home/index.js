@@ -13,7 +13,8 @@ import { connect } from 'react-redux'
 import { updatePostsList } from '../../redux/actions/posts.js'
 
 function Home (props) {
-  const { postList, setPostList } = props
+  const { postList, currentUserData, setPostList } = props
+  const { first_name: firstName } = currentUserData
 
   const handleFetchData = useCallback(async () => {
     let response = await fetchPosts()
@@ -26,7 +27,7 @@ function Home (props) {
 
   return (
     <div css={homeRoot}>
-      <div css={greetingText}>Hello Jane</div>
+      <div css={greetingText}>Hello {firstName}</div>
       <div css={subtitleText}>
         How are you doing today? Would you like to share something with the
         community 🤗
@@ -41,8 +42,14 @@ function Home (props) {
   )
 }
 
-const mapStateToProps = ({ posts: { postList } = {} }) => {
-  return { postList }
+const mapStateToProps = ({
+  login: { currentUserData },
+  posts: { postList } = {}
+}) => {
+  return {
+    currentUserData,
+    postList
+  }
 }
 
 const mapDispatchToProps = dispatch => {

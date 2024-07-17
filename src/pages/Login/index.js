@@ -18,6 +18,7 @@ import { toast } from 'react-toastify'
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/login'
+import { handleFetchUserData } from '../../service/login'
 
 function Login (props) {
   const { isLoggedIn, loginUser } = props
@@ -25,11 +26,13 @@ function Login (props) {
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !password) {
       toast.error('Please enter email and password')
     } else {
-      loginUser({ email, password })
+      const data = await handleFetchUserData(email)
+      console.log('data', data)
+      loginUser(data)
       toast.success('Login successful')
     }
   }
