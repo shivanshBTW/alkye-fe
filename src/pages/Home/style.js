@@ -17,6 +17,16 @@ export const greetingText = css`
   font-weight: 500;
   line-height: 33.89px;
   text-align: left;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+export const logoutIconStyle = css`
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 `
 
 export const subtitleText = css`

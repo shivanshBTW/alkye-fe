@@ -4,6 +4,7 @@ import CreatePost from '../../components/Home/CreatePost/index.js'
 import {
   greetingText,
   homeRoot,
+  logoutIconStyle,
   postsSectionStyle,
   subtitleText
 } from './style.js'
@@ -11,9 +12,11 @@ import { fetchPosts } from './fetchData.js'
 import PostCard from '../../components/Home/PostCard/index.js'
 import { connect } from 'react-redux'
 import { updatePostsList } from '../../redux/actions/posts.js'
+import logoutIcon from '../../assets/logout-logo.svg'
+import { logoutUser } from '../../redux/actions/login.js'
 
 function Home (props) {
-  const { postList, currentUserData, setPostList } = props
+  const { postList, currentUserData, setPostList, logoutUser } = props
   const { first_name: firstName } = currentUserData
 
   const handleFetchData = useCallback(async () => {
@@ -25,9 +28,21 @@ function Home (props) {
     handleFetchData()
   }, [handleFetchData])
 
+  const handleLogout = () => {
+    logoutUser()
+  }
   return (
     <div css={homeRoot}>
-      <div css={greetingText}>Hello {firstName}</div>
+      <div css={greetingText}>
+        <span>Hello {firstName}</span>
+        <img
+          src={logoutIcon}
+          alt='logout'
+          css={logoutIconStyle}
+          title='Logout'
+          onClick={handleLogout}
+        />
+      </div>
       <div css={subtitleText}>
         How are you doing today? Would you like to share something with the
         community 🤗
@@ -54,7 +69,8 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    setPostList: data => dispatch(updatePostsList(data))
+    setPostList: data => dispatch(updatePostsList(data)),
+    logoutUser: () => dispatch(logoutUser())
   }
 }
 
