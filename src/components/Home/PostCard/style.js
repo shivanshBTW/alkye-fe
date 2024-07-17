@@ -78,6 +78,7 @@ export const inputStyle = css`
   outline: none;
   border-radius: 8px;
   color: ${theme.tertiaryTextColor};
+  resize: none;
 
   font-family: Inter;
   font-size: 16px;

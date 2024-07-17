@@ -13,13 +13,15 @@ import {
   timeContainer
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import commentsSection from '../../../assets/commentsSection.svg'
 import moment from 'moment'
 
 function PostCard (props) {
   const { postData } = props
   console.log('postData', postData)
+  const inputRef = useRef(null)
+
   const {
     cheesy_paragraph: body,
     random_number: likes,
@@ -32,6 +34,18 @@ function PostCard (props) {
   const [selectedEmoji, setSelectedEmoji] = useState(emoji ? emoji : '💬')
 
   const timeString = useMemo(() => moment(time).fromNow(), [time])
+
+  const setSize = () => {
+    if (inputRef?.current) {
+      inputRef.current.style.height = 'auto'
+      inputRef.current.style.height = inputRef.current.scrollHeight + 'px'
+    }
+  }
+
+  useMemo(() => {
+    setSize()
+    setTimeout(setSize, 100)
+  }, [body, inputRef])
 
   return (
     <div css={createPostRoot}>
@@ -47,7 +61,13 @@ function PostCard (props) {
         </div>
       </div>
       <div css={inputContainerStyle}>
-        <div css={inputStyle}>{body}</div>
+        <textarea
+          ref={inputRef}
+          name='message'
+          type='text'
+          value={body}
+          css={inputStyle}
+        />
         <div css={emojiSelectorButton}>
           <EmojiSelector
             selectedEmoji={selectedEmoji}
