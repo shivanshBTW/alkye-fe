@@ -20,7 +20,7 @@ function EmojiSelector (props) {
     <div css={emojiSelectorRoot}>
       <Popover
         isOpen={isEmojiPickerOpen && allowSelector}
-        positions={['top', 'bottom']} // preferred positions by priority
+        positions={['top', 'bottom', 'right', 'left']} // preferred positions by priority
         onClickOutside={() => setIsEmojiPickerOpen(false)}
         content={
           <div css={emojiSelectorModalStyle}>

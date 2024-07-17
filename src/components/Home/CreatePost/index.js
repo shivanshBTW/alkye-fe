@@ -11,9 +11,26 @@ import {
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { addPost } from '../../../redux/actions/posts.js'
 
 function CreatePost (props) {
+  const currentUserData = useSelector(state => state?.login?.currentUserData)
+  const dispatch = useDispatch()
+
   const [selectedEmoji, setSelectedEmoji] = useState('💬')
+  const [postText, setPostText] = useState('')
+
+  const handlePost = () => {
+    const data = {
+      ...currentUserData,
+      cheesy_paragraph: postText,
+      random_number: 0,
+      emoji: selectedEmoji,
+      random_date: new Date().toISOString()
+    }
+    dispatch(addPost(data))
+  }
 
   return (
     <div css={createPostRoot}>
@@ -24,6 +41,8 @@ function CreatePost (props) {
           rows='1'
           type='text'
           placeholder='How are you feeling today?'
+          value={postText}
+          onChange={e => setPostText(e.target.value)}
           css={inputStyle}
         />
         <div css={emojiSelectorButton}>
@@ -35,7 +54,9 @@ function CreatePost (props) {
         </div>
       </div>
       <div css={buttonContainer}>
-        <Button style={buttonStyle}>Post</Button>
+        <Button style={buttonStyle} onClick={handlePost}>
+          Post
+        </Button>
       </div>
     </div>
   )

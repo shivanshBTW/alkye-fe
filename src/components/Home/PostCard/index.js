@@ -13,8 +13,9 @@ import {
   timeContainer
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import commentsSection from '../../../assets/commentsSection.svg'
+import moment from 'moment'
 
 function PostCard (props) {
   const { postData } = props
@@ -24,9 +25,13 @@ function PostCard (props) {
     random_number: likes,
     avatar,
     first_name: firstName,
-    last_name: lastName
+    last_name: lastName,
+    random_date: time,
+    emoji
   } = postData
-  const [selectedEmoji, setSelectedEmoji] = useState('💬')
+  const [selectedEmoji, setSelectedEmoji] = useState(emoji ? emoji : '💬')
+
+  const timeString = useMemo(() => moment(time).fromNow(), [time])
 
   return (
     <div css={createPostRoot}>
@@ -38,7 +43,7 @@ function PostCard (props) {
           <div css={nameStyle}>
             {firstName} {lastName}
           </div>
-          <div css={timeContainer}>5mins ago</div>
+          <div css={timeContainer}>{timeString}</div>
         </div>
       </div>
       <div css={inputContainerStyle}>

@@ -6,6 +6,8 @@ export const createPostRoot = css`
   padding: 24px 20px;
   background-color: ${theme.paper};
   border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
 `
 
 export const headingStyle = css`
