@@ -34,6 +34,10 @@ export const loginSectionContainer = css`
   border: 2px solid transparent;
   background: linear-gradient(${theme.paper}, ${theme.paper}) padding-box,
     linear-gradient(129.59deg, #969696 0%, #343434 98.18%) border-box;
+
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
 `
 
 export const secondaryHeading = css`
