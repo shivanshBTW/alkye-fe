@@ -20,6 +20,7 @@ import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/login'
 import { handleFetchUserData } from '../../service/login'
 import { delay } from '../../utils/commonUtils'
+import { routes } from '../../routes'
 
 function Login (props) {
   const { isLoggedIn, loginUser } = props
@@ -41,7 +42,7 @@ function Login (props) {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate('/')
+      navigate(routes.home)
     }
   }, [isLoggedIn, navigate])
 
@@ -84,7 +85,7 @@ function Login (props) {
             </div>
             <div css={signupSectionContainer}>
               Not registered yet?{' '}
-              <Link to='/sign-up' css={registerHereLink}>
+              <Link to={routes.signUp} css={registerHereLink}>
                 Register →
               </Link>
             </div>

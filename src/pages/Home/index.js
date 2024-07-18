@@ -14,6 +14,7 @@ import { updatePostsList } from '../../redux/actions/posts.js'
 import logoutIcon from '../../assets/logout-logo.svg'
 import { logoutUser } from '../../redux/actions/login.js'
 import { fetchPosts } from '../../service/home.js'
+import { toast } from 'material-react-toastify'
 
 function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
@@ -30,7 +31,9 @@ function Home (props) {
 
   const handleLogout = () => {
     logoutUser()
+    toast.success('Successfully logged out')
   }
+
   return (
     <div css={homeRoot}>
       <div css={greetingText}>

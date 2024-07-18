@@ -1,3 +1,17 @@
+## Steps
+
+### Login:
+
+You can input any email and password in the login fields. This will fetch details for a randomly generated mock user from a public API I used. Alternatively, you can go to the sign-up page, which will go through the same process.
+
+### Home Page:
+
+Once you reach the home page, it will fetch a list of randomly generated posts. Users can also post their thoughts.
+
+### Logout:
+
+I have added a logout button to reset the flow.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

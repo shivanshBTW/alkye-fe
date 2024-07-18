@@ -19,6 +19,8 @@ import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/login'
 import { handleFetchUserData } from '../../service/login'
+import { delay } from '../../utils/commonUtils'
+import { routes } from '../../routes'
 
 function SignUp (props) {
   const { isLoggedIn, loginUser } = props
@@ -32,6 +34,8 @@ function SignUp (props) {
       toast.error('Please enter email and password')
     } else {
       const data = await handleFetchUserData()
+      // to replicate a longer login delay
+      await delay(2000)
       loginUser(data)
       toast.success('Login successful')
     }
@@ -39,7 +43,7 @@ function SignUp (props) {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate('/')
+      navigate(routes.home)
     }
   }, [isLoggedIn, navigate])
 
@@ -93,7 +97,7 @@ function SignUp (props) {
             </div>
             <div css={goToLoginContainer}>
               Already have an account?{' '}
-              <Link to='/login' css={registerHereLink}>
+              <Link to={routes.login} css={registerHereLink}>
                 Login →
               </Link>
             </div>
