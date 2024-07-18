@@ -29,12 +29,6 @@ export const loginSectionContainer = css`
   border-radius: 8px;
   text-align: center;
 
-  border-width: 4px;
-  border-style: solid;
-  border: 2px solid transparent;
-  background: linear-gradient(${theme.paper}, ${theme.paper}) padding-box,
-    linear-gradient(129.59deg, #969696 0%, #343434 98.18%) border-box;
-
   @media (max-width: 768px) {
     width: 80vw;
   }
