@@ -32,7 +32,6 @@ function SignUp (props) {
       toast.error('Please enter email and password')
     } else {
       const data = await handleFetchUserData()
-      console.log('data', data)
       loginUser(data)
       toast.success('Login successful')
     }

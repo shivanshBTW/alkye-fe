@@ -8,6 +8,5 @@ export const handleFetchUserData = async () => {
       'Content-Type': 'application/json'
     }
   })
-  console.log('first data', data)
   return data
 }

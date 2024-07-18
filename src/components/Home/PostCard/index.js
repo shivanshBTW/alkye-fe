@@ -19,7 +19,6 @@ import moment from 'moment'
 
 function PostCard (props) {
   const { postData } = props
-  console.log('postData', postData)
   const inputRef = useRef(null)
 
   const {

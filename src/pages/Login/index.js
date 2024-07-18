@@ -19,6 +19,7 @@ import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/login'
 import { handleFetchUserData } from '../../service/login'
+import { delay } from '../../utils/commonUtils'
 
 function Login (props) {
   const { isLoggedIn, loginUser } = props
@@ -31,7 +32,8 @@ function Login (props) {
       toast.error('Please enter email and password')
     } else {
       const data = await handleFetchUserData(email)
-      console.log('data', data)
+      // to replicate a longer login delay
+      await delay(2000)
       loginUser(data)
       toast.success('Login successful')
     }
