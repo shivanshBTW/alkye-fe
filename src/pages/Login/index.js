@@ -66,7 +66,7 @@ function Login (props) {
           gradientValue={
             'linear-gradient(129.59deg, #969696 0%, #343434 98.18%)'
           }
-          borderWidth={'4px'}
+          borderWidth={'2px'}
           borderRadius={'8px'}
           containerBackgroundColor={theme.paper}
           css={loginSectionContainer}
