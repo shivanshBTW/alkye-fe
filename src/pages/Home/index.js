@@ -8,12 +8,12 @@ import {
   postsSectionStyle,
   subtitleText
 } from './style.js'
-import { fetchPosts } from './fetchData.js'
 import PostCard from '../../components/Home/PostCard/index.js'
 import { connect } from 'react-redux'
 import { updatePostsList } from '../../redux/actions/posts.js'
 import logoutIcon from '../../assets/logout-logo.svg'
 import { logoutUser } from '../../redux/actions/login.js'
+import { fetchPosts } from '../../service/home.js'
 
 function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
