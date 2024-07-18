@@ -26,16 +26,19 @@ function Login (props) {
   const { isLoggedIn, loginUser } = props
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoggingIn, setIsLoggingIn] = useState(false)
   const navigate = useNavigate()
 
   const handleLogin = async () => {
     if (!email || !password) {
       toast.error('Please enter email and password')
     } else {
+      setIsLoggingIn(true)
       const data = await handleFetchUserData(email)
       // to replicate a longer login delay
       await delay(2000)
       loginUser(data)
+      setIsLoggingIn(false)
       toast.success('Login successful')
     }
   }
@@ -79,7 +82,7 @@ function Login (props) {
               />
             </div>
             <div>
-              <Button fullWidth onClick={handleLogin}>
+              <Button fullWidth onClick={handleLogin} disabled={isLoggingIn}>
                 Login now
               </Button>
             </div>

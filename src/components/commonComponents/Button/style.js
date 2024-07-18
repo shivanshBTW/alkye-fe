@@ -3,7 +3,7 @@ import { theme } from '../../../config/themes/dark'
 
 export const buttonContainerRoot = css``
 
-export const buttonStyle = fullWidth => css`
+export const buttonStyle = ({ fullWidth, disabled }) => css`
   padding: 12px;
   background: ${theme.primaryButtonColor};
   border-radius: 4px;
@@ -21,6 +21,14 @@ export const buttonStyle = fullWidth => css`
     ? css`
         width: 100%;
         box-sizing: border-box;
+      `
+    : ''}
+
+  ${disabled
+    ? css`
+        background: ${theme.primaryButtonColorDisabled};
+        cursor: not-allowed;
+        color: ${theme.mainTextColorDisabled};
       `
     : ''}
 `

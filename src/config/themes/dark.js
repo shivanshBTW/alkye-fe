@@ -10,5 +10,7 @@ export const theme = {
   posterNameColor: '#C5C7CA',
   linkColor: '#c6c7c9',
 
-  primaryButtonColor: '#4A96FF'
+  primaryButtonColor: '#4A96FF',
+  primaryButtonColorDisabled: '#B3D1FF',
+  mainTextColorDisabled: '#FFFFFF'
 }

@@ -2,10 +2,14 @@
 import { buttonContainerRoot, buttonStyle } from './style.js'
 
 function Button (props) {
-  const { style, fullWidth, children, ...rest } = props
+  const { style, fullWidth, children, disabled, ...rest } = props
   return (
     <div css={buttonContainerRoot}>
-      <button css={[buttonStyle(fullWidth), style]} {...rest}>
+      <button
+        css={[buttonStyle({ fullWidth, disabled }), style]}
+        disabled={disabled}
+        {...rest}
+      >
         {children}
       </button>
     </div>

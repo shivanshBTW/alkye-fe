@@ -27,16 +27,19 @@ function SignUp (props) {
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoggingIn, setIsLoggingIn] = useState(false)
   const navigate = useNavigate()
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      toast.error('Please enter email and password')
+    if (!email || !password || !username) {
+      toast.error('Please enter email, username and password')
     } else {
+      setIsLoggingIn(true)
       const data = await handleFetchUserData()
       // to replicate a longer login delay
       await delay(2000)
       loginUser(data)
+      setIsLoggingIn(false)
       toast.success('Login successful')
     }
   }
@@ -91,7 +94,7 @@ function SignUp (props) {
               />
             </div>
             <div>
-              <Button fullWidth onClick={handleLogin}>
+              <Button fullWidth onClick={handleLogin} disabled={isLoggingIn}>
                 Continue
               </Button>
             </div>
