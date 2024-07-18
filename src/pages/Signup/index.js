@@ -14,7 +14,7 @@ import {
   goToLoginContainer
 } from './style'
 import loginPageLogo from '../../assets/login/loginPageLogo.svg'
-import { toast } from 'react-toastify'
+import { toast } from 'material-react-toastify'
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { loginUser } from '../../redux/actions/login'
