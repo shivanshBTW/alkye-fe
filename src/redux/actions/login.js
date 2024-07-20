@@ -18,7 +18,7 @@ export const updateFormData = data => {
   }
 }
 
-export const setEmail = email => {
+export const setFormEmail = email => {
   return {
     type: 'SET_FORM_EMAIL',
     payload: email

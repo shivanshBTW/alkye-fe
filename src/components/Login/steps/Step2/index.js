@@ -13,7 +13,7 @@ import Button from '../../../commonComponents/Button'
 import { setFormEmail } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
 
-function Step1 (props) {
+function Step2 (props) {
   const {
     email: formEmail = '',
     setFormEmail,
@@ -30,7 +30,7 @@ function Step1 (props) {
   return (
     <div css={stepRootStyle}>
       <div css={stepDetailsSectionStyle}>
-        <div css={stepNumberStyle}>Step 1</div>
+        <div css={stepNumberStyle}>Step 2</div>
         <div css={titleInstructionStyle}>
           Enter your email address to continue
         </div>
@@ -70,4 +70,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Step1)
+export default connect(mapStateToProps, mapDispatchToProps)(Step2)

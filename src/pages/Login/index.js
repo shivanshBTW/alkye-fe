@@ -13,27 +13,26 @@ import { routes } from '../../routes'
 import testLogo from '../../assets/images/login/testLogo.svg'
 import { toast } from 'material-react-toastify'
 import Step1 from '../../components/Login/steps/Step1'
+import Step2 from '../../components/Login/steps/Step2'
 
 function Login (props) {
-  const { isLoggedIn, loginUser } = props
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const { email: formEmail, isLoggedIn, loginUser } = props
   const [isLoggingIn, setIsLoggingIn] = useState(false)
   const navigate = useNavigate()
 
-  const handleLogin = async () => {
-    if (!email || !password) {
-      toast.error('Please enter email and password')
-    } else {
-      setIsLoggingIn(true)
-      const data = await handleFetchUserData(email)
-      // to replicate a longer login delay
-      await delay(2000)
-      loginUser(data)
-      setIsLoggingIn(false)
-      toast.success('Login successful')
-    }
-  }
+  // const handleLogin = async () => {
+  //   if (!email || !password) {
+  //     toast.error('Please enter email and password')
+  //   } else {
+  //     setIsLoggingIn(true)
+  //     const data = await handleFetchUserData(email)
+  //     // to replicate a longer login delay
+  //     await delay(2000)
+  //     loginUser(data)
+  //     setIsLoggingIn(false)
+  //     toast.success('Login successful')
+  //   }
+  // }
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -45,18 +44,19 @@ function Login (props) {
     <div css={loginRoot}>
       <div css={loginSectionContainer}>
         <img src={testLogo} alt='Test' css={logoStyle} />
-        <div>
-          <Step1 />
-        </div>
+        <div>{formEmail ? <Step2 /> : <Step1 />}</div>
       </div>
     </div>
   )
 }
 
-const mapStateToProps = ({ login: { isLoggedIn, currentUserData } = {} }) => {
+const mapStateToProps = ({
+  login: { isLoggedIn, currentUserData, formData: { email } = {} } = {}
+}) => {
   return {
     isLoggedIn,
-    currentUserData
+    currentUserData,
+    email
   }
 }
 
