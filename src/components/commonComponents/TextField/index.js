@@ -7,7 +7,7 @@ import {
   viewPasswordToggleStyle
 } from './style.js'
 
-import passwordEye from '../../../assets/login/passwordEye.svg'
+import passwordEye from '../../../assets/images/login/passwordEye.svg'
 import { useState } from 'react'
 
 function TextField (props) {

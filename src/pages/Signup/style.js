@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { theme } from '../../config/themes/dark'
+import { theme } from '../../config/themes/light'
 
 export const signUpRoot = css`
   height: 100vh;

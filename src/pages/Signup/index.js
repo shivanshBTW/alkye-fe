@@ -13,7 +13,7 @@ import {
   signUpRoot,
   goToLoginContainer
 } from './style'
-import loginPageLogo from '../../assets/login/loginPageLogo.svg'
+// import loginPageLogo from '../../assets/images/login/test.svg'
 import { toast } from 'material-react-toastify'
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
@@ -54,7 +54,7 @@ function SignUp (props) {
     <div css={signUpRoot}>
       <div css={centerSectionContainer}>
         <div css={logoContainer}>
-          <img src={loginPageLogo} alt='logo' />
+          {/* <img src={loginPageLogo} alt='logo' /> */}
         </div>
         <div css={signUpSectionContainer}>
           <div css={secondaryHeading}>Welcome Back</div>

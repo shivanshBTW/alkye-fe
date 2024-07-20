@@ -11,7 +11,7 @@ import {
 import PostCard from '../../components/Home/PostCard/index.js'
 import { connect } from 'react-redux'
 import { updatePostsList } from '../../redux/actions/posts.js'
-import logoutIcon from '../../assets/logout-logo.svg'
+import logoutIcon from '../../assets/images/logout-logo.svg'
 import { logoutUser } from '../../redux/actions/login.js'
 import { fetchPosts } from '../../service/home.js'
 import { toast } from 'material-react-toastify'

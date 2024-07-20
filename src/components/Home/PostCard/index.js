@@ -14,7 +14,7 @@ import {
 } from './style.js'
 import EmojiSelector from '../../commonComponents/EmojiSelector/index.js'
 import { useMemo, useRef, useState } from 'react'
-import commentsSection from '../../../assets/commentsSection.svg'
+import commentsSection from '../../../assets/images/commentsSection.svg'
 import moment from 'moment'
 
 function PostCard (props) {

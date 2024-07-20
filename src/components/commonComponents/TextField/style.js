@@ -1,13 +1,13 @@
 import { css } from '@emotion/react'
-import { theme } from '../../../config/themes/dark'
+import { theme } from '../../../config/themes/light'
 
 export const textFieldRoot = css``
 
 export const labelStyle = css`
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 16.94px;
+  font-family: Söhne Test;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 47px;
   text-align: left;
   margin-bottom: 10px;
 `
@@ -23,10 +23,10 @@ export const inputStyle = fullWidth => css`
   border-radius: 4px;
   outline: none;
 
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.36px;
+  font-family: Söhne Test;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 50px;
   text-align: left;
   color: ${theme.mainTextColor};
 
