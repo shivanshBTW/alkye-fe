@@ -38,6 +38,13 @@ export const inputSectionContainer = css`
   padding-top: 35px;
 `
 
+export const buttonSectionContainer = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
 export const disclaimerStyle = css`
   ${theme.typography.body2}
   ${theme.typography.fontWeightRegular}

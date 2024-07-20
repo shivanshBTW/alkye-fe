@@ -7,12 +7,14 @@ import {
   stepNumberStyle,
   subTextStyle,
   titleInstructionStyle,
-  disclaimerStyle
+  disclaimerStyle,
+  buttonSectionContainer
 } from '../style.js'
 import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
 import { setFormEmail } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
+import { buttonStyle } from './style.js'
 
 function Step2 (props) {
   const { email: formEmail = '', setFormEmail, isLoggingIn } = props
@@ -42,13 +44,20 @@ function Step2 (props) {
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
-          <Button
-            onClick={handleSubmit}
-            isLoading={isLoggingIn}
-            align='flex-end'
-          >
-            Continue
-          </Button>
+          <div css={buttonSectionContainer}>
+            <div>
+              Use a minimum of 6 characters (case sensitive) with at least one
+              number or special character.
+            </div>
+            <Button
+              onClick={handleSubmit}
+              isLoading={isLoggingIn}
+              align='flex-end'
+              style={buttonStyle}
+            >
+              Agree & Continue
+            </Button>
+          </div>
         </div>
       </div>
       <div css={disclaimerStyle}>
