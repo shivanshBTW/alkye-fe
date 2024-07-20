@@ -4,7 +4,7 @@ import { theme } from '../../../config/themes/light'
 export const createPostRoot = css`
   margin: 0 auto;
   padding: 24px 20px;
-  background-color: ${theme.paper};
+  background-color: ${theme.main.main.paper};
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
@@ -25,7 +25,7 @@ export const avatarImageContainer = css`
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: ${theme.paper1};
+  background: ${theme.main.paper1};
 `
 
 export const avatarImageStyle = css`
@@ -43,7 +43,7 @@ export const nameStyle = css`
   line-height: 19.36px;
   text-align: left;
   margin-bottom: 5px;
-  color: ${theme.posterNameColor};
+  color: ${theme.main.posterNameColor};
 `
 
 export const timeContainer = css`
@@ -52,7 +52,7 @@ export const timeContainer = css`
   font-weight: 500;
   line-height: 16.94px;
   text-align: left;
-  color: ${theme.tertiaryTextColor};
+  color: ${theme.main.tertiaryTextColor};
 `
 
 export const inputContainerStyle = css`
@@ -70,14 +70,14 @@ export const emojiSelectorButton = css`
 export const inputStyle = css`
   width: 100%;
   box-sizing: border-box;
-  background: ${theme.paper1};
+  background: ${theme.main.paper1};
   padding: 16px 15px;
   min-height: 78px;
   padding-left: 80px;
   border: none;
   outline: none;
   border-radius: 8px;
-  color: ${theme.tertiaryTextColor};
+  color: ${theme.main.tertiaryTextColor};
   resize: none;
 
   font-family: Inter;
@@ -87,7 +87,7 @@ export const inputStyle = css`
   text-align: left;
 
   &::placeholder {
-    color: ${theme.tertiaryTextColor};
+    color: ${theme.main.tertiaryTextColor};
   }
 `
 
@@ -100,10 +100,10 @@ export const buttonContainer = css`
   display: flex;
   align-items: center;
   gap: 8px;
-  color: ${theme.tertiaryTextColor};
+  color: ${theme.main.tertiaryTextColor};
   cursor: pointer;
   &:hover {
-    color: ${theme.mainTextColor};
+    color: ${theme.main.mainTextColor};
   }
 `
 export const buttonStyle = css`

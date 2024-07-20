@@ -2,9 +2,7 @@ import { css } from '@emotion/react'
 
 const spacing = 8
 const fontFamily = css`
-  font-family: Söhne Test, 'IBM Plex Sans', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: Söhne Test;
 `
 
 export const theme = {
@@ -20,7 +18,7 @@ export const theme = {
     posterNameColor: '#000000',
     linkColor: '#000000',
 
-    primaryButtonColor: '#FFFFFF',
+    primaryButtonColor: '#000000',
     primaryButtonColorDisabled: '#FFFFFF',
     mainTextColorDisabled: '#000000'
   },
@@ -63,7 +61,6 @@ export const theme = {
     h1: css`
       ${fontFamily};
       font-size: clamp(40px, 18px + 3.5vw, 56px);
-      // font-size: clamp(2.5rem, 1.125rem + 3.5vw, 3.5em);
       font-weight: 600;
       line-height: 1.1142857142857143;
       letter-spacing: -0.2;
@@ -141,7 +138,7 @@ export const theme = {
     `,
     caption: css`
       ${fontFamily};
-      font-size: 12rem;
+      font-size: 12px;
       line-height: 24px;
       letter-spacing: 0;
       font-weight: 700;

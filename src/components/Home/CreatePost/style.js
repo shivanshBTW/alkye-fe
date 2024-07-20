@@ -4,7 +4,7 @@ import { theme } from '../../../config/themes/light'
 export const createPostRoot = css`
   margin: 0 auto;
   padding: 24px 20px;
-  background-color: ${theme.paper};
+  background-color: ${theme.main.paper};
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
@@ -33,13 +33,13 @@ export const emojiSelectorButton = css`
 export const inputStyle = css`
   width: 100%;
   box-sizing: border-box;
-  background: ${theme.paper1};
+  background: ${theme.main.paper1};
   padding: 31px 15px;
   padding-left: 80px;
   border: none;
   outline: none;
   border-radius: 8px;
-  color: ${theme.mainTextColor};
+  color: ${theme.main.mainTextColor};
   resize: vertical;
 
   font-family: Inter;
@@ -49,7 +49,7 @@ export const inputStyle = css`
   text-align: left;
 
   &::placeholder {
-    color: ${theme.tertiaryTextColor};
+    color: ${theme.main.tertiaryTextColor};
   }
 `
 

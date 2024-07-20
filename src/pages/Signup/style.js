@@ -3,8 +3,8 @@ import { theme } from '../../config/themes/light'
 
 export const signUpRoot = css`
   height: 100vh;
-  background: ${theme.background};
-  color: ${theme.mainTextColor};
+  background: ${theme.main.background};
+  color: ${theme.main.mainTextColor};
   position: relative;
 `
 
@@ -23,7 +23,7 @@ export const logoImage = css``
 export const signUpSectionContainer = css`
   padding: 8px;
   width: 420px;
-  background: ${theme.paper};
+  background: ${theme.main.paper};
   padding: 40px 24px;
   position: relative;
   border-radius: 8px;
@@ -32,7 +32,8 @@ export const signUpSectionContainer = css`
   border-width: 4px;
   border-style: solid;
   border: 2px solid transparent;
-  background: linear-gradient(${theme.paper}, ${theme.paper}) padding-box,
+  background: linear-gradient(${theme.main.paper}, ${theme.main.paper})
+      padding-box,
     linear-gradient(129.59deg, #969696 0%, #343434 98.18%) border-box;
 
   @media (max-width: 768px) {
@@ -41,7 +42,7 @@ export const signUpSectionContainer = css`
 `
 
 export const secondaryHeading = css`
-  color: ${theme.secondaryTextColor};
+  color: ${theme.main.secondaryTextColor};
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -54,7 +55,7 @@ export const mainHeading = css`
   font-size: 18px;
   font-weight: 600;
   line-height: 21.78px;
-  color: ${theme.mainTextColor};
+  color: ${theme.main.mainTextColor};
   margin-top: 8px;
 `
 
@@ -71,9 +72,9 @@ export const goToLoginContainer = css`
   font-size: 14px;
   font-weight: 500;
   line-height: 16.94px;
-  color: ${theme.tertiaryTextColor};
+  color: ${theme.main.tertiaryTextColor};
 `
 export const registerHereLink = css`
-  color: ${theme.linkColor};
+  color: ${theme.main.linkColor};
   text-decoration: none;
 `

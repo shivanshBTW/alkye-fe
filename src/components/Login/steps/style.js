@@ -1,3 +1,38 @@
 import { css } from '@emotion/react'
+import { theme } from '../../../config/themes/light'
 
-export const stepRootStyle = css``
+export const stepRootStyle = css`
+  display: flex;
+  flex-direction: row;
+  column-gap: 180px;
+`
+
+export const stepDetailsSectionStyle = css`
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`
+
+export const stepNumberStyle = css`
+  ${theme.typography.h6}
+  ${theme.typography.fontWeightRegular}
+  text-transform: uppercase;
+`
+
+export const titleInstructionStyle = css`
+  ${theme.typography.h3};
+  ${theme.typography.fontWeightMedium};
+`
+
+export const subTextStyle = css`
+  ${theme.typography.h6}
+  ${theme.typography.fontWeightRegular}
+`
+
+export const inputSectionContainer = css`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+`

@@ -1,12 +1,20 @@
 import { css } from '@emotion/react'
 import { theme } from '../../../config/themes/light'
 
-export const buttonContainerRoot = css``
+export const buttonContainerRoot = align => css`
+  ${align
+    ? css`
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: ${align};
+      `
+    : ''}
+`
 
 export const buttonStyle = ({ fullWidth, disabled }) => css`
-  padding: 12px;
-  background: ${theme.primaryButtonColor};
-  border-radius: 4px;
+  padding: 18px;
+  min-width: 230px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -15,7 +23,15 @@ export const buttonStyle = ({ fullWidth, disabled }) => css`
   font-size: 16px;
   font-weight: 500;
   line-height: 19.36px;
-  color: ${theme.mainTextColor};
+  background: ${theme.main.primaryButtonColor};
+  color: ${theme.inverted.mainTextColor};
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+    min-width: 120px;
+    border-radius: 5px;
+  }
 
   ${fullWidth
     ? css`
@@ -26,9 +42,9 @@ export const buttonStyle = ({ fullWidth, disabled }) => css`
 
   ${disabled
     ? css`
-        background: ${theme.primaryButtonColorDisabled};
+        background: ${theme.inverted.primaryButtonColorDisabled};
         cursor: not-allowed;
-        color: ${theme.mainTextColorDisabled};
+        color: ${theme.inverted.mainTextColorDisabled};
       `
     : ''}
 `

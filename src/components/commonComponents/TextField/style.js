@@ -18,7 +18,7 @@ export const inputComponentContainer = css`
 
 export const inputStyle = fullWidth => css`
   padding: 12px;
-  background: ${theme.paper};
+  background: ${theme.main.paper};
   border: 1.5px solid #35373b;
   border-radius: 4px;
   outline: none;
@@ -28,7 +28,7 @@ export const inputStyle = fullWidth => css`
   font-weight: 500;
   line-height: 50px;
   text-align: left;
-  color: ${theme.mainTextColor};
+  color: ${theme.main.mainTextColor};
 
   ${fullWidth
     ? css`
@@ -38,7 +38,7 @@ export const inputStyle = fullWidth => css`
     : ''}
 
   &::placeholder {
-    color: ${theme.tertiaryTextColor};
+    color: ${theme.main.tertiaryTextColor};
   }
 `
 

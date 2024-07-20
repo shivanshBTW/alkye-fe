@@ -6,7 +6,7 @@ export const emojiSelectorRoot = css`
 `
 
 export const emojiButtonStyle = allowSelector => css`
-  background-color: ${theme.paper};
+  background-color: ${theme.main.paper};
   padding: 12px 15px;
   border-radius: 50%;
   cursor: ${allowSelector ? 'pointer' : 'default'};

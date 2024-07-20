@@ -2,7 +2,8 @@ const savedUserData = localStorage.getItem('currentUserData')
 
 const initialState = {
   isLoggedIn: !!savedUserData,
-  currentUserData: JSON.parse(savedUserData) || {}
+  currentUserData: JSON.parse(savedUserData) || {},
+  formData: {}
 }
 
 const loginReducer = (state = initialState, action) => {
@@ -12,14 +13,24 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true,
-        currentUserData: action.payload
+        currentUserData: action.payload,
+        formData: {}
       }
     case 'LOGOUT_USER':
       localStorage.removeItem('currentUserData')
       return {
         ...state,
         isLoggedIn: false,
-        currentUserData: {}
+        currentUserData: {},
+        formData: {}
+      }
+    case 'UPDATE_FORM_DATA':
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          ...action.payload
+        }
       }
     default:
       return state

@@ -39,7 +39,7 @@ export const subtitleText = css`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: ${theme.tertiaryTextColor};
+  color: ${theme.main.tertiaryTextColor};
   margin-bottom: 25px;
   width: 580px;
   box-sizing: border-box;
