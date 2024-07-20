@@ -40,6 +40,14 @@ const loginReducer = (state = initialState, action) => {
           email: action.payload
         }
       }
+    case 'SET_FORM_PASSWORD':
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          password: action.payload
+        }
+      }
     default:
       return state
   }

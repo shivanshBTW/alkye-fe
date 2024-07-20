@@ -12,18 +12,34 @@ import {
 } from '../style.js'
 import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
-import { setFormEmail } from '../../../../redux/actions/login.js'
+import { loginUser, setFormPassword } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
 import { buttonStyle } from './style.js'
+import { handleLogin } from '../../../../service/login.js'
+import { toast } from 'material-react-toastify'
 
 function Step2 (props) {
-  const { email: formEmail = '', setFormEmail, isLoggingIn } = props
+  const { email: formEmail, setFormPassword, loginUser, isLoggingIn } = props
 
-  const [email, setEmail] = useState(formEmail)
+  const [password, setPassword] = useState('')
 
-  const handleSubmit = () => {
-    setFormEmail(email)
-    // handleLogin()
+  const handleSubmit = async () => {
+    if (formEmail && password.length >= 6) {
+      try {
+        let res = await handleLogin()
+        // let res = await handleLogin(formEmail, password)
+        const { data } = res || {}
+        loginUser({
+          userData: data,
+          email: formEmail,
+          password
+        })
+        toast.success('Login successful')
+      } catch (error) {
+        const msg = error?.response?.data?.non_field_errors[0]
+        toast.error(`${msg ? msg : 'Login failed'}`)
+      }
+    }
   }
   return (
     <div>
@@ -41,8 +57,8 @@ function Step2 (props) {
             fullWidth
             type='password'
             placeholder='Choose a password'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
           <div css={buttonSectionContainer}>
             <div>
@@ -74,17 +90,19 @@ function Step2 (props) {
 }
 
 const mapStateToProps = ({
-  login: { isLoggingIn, formData: { email } = {} } = {}
+  login: { isLoggingIn, formData: { email, password } = {} } = {}
 }) => {
   return {
     isLoggingIn,
-    email
+    email,
+    password
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setFormEmail: email => dispatch(setFormEmail(email))
+    loginUser: data => dispatch(loginUser(data)),
+    setFormPassword: email => dispatch(setFormPassword(email))
   }
 }
 

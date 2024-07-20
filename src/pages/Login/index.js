@@ -1,38 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import Button from '../../components/commonComponents/Button'
-import TextField from '../../components/commonComponents/TextField'
 import { connect } from 'react-redux'
-import { delay } from '../../utils/commonUtils'
-import { handleFetchUserData } from '../../service/login'
 import { loginRoot, loginSectionContainer, logoStyle } from './style'
 import { loginUser } from '../../redux/actions/login'
 import { routes } from '../../routes'
 import testLogo from '../../assets/images/login/testLogo.svg'
-import { toast } from 'material-react-toastify'
 import Step1 from '../../components/Login/steps/Step1'
 import Step2 from '../../components/Login/steps/Step2'
 
 function Login (props) {
-  const { email: formEmail, isLoggedIn, loginUser } = props
-  const [isLoggingIn, setIsLoggingIn] = useState(false)
+  const { email: formEmail, isLoggedIn } = props
   const navigate = useNavigate()
-
-  // const handleLogin = async () => {
-  //   if (!email || !password) {
-  //     toast.error('Please enter email and password')
-  //   } else {
-  //     setIsLoggingIn(true)
-  //     const data = await handleFetchUserData(email)
-  //     // to replicate a longer login delay
-  //     await delay(2000)
-  //     loginUser(data)
-  //     setIsLoggingIn(false)
-  //     toast.success('Login successful')
-  //   }
-  // }
 
   useEffect(() => {
     if (isLoggedIn) {

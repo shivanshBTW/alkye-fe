@@ -1,14 +1,12 @@
 import App from './App'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import SignUp from './pages/Signup'
 import PrivateRoute from './utils/PrivateRoute'
 import { createBrowserRouter } from 'react-router-dom'
 
 export const routes = {
   home: '/',
-  login: '/login',
-  signUp: '/sign-up'
+  login: '/login'
 }
 
 const router = createBrowserRouter([
@@ -33,10 +31,6 @@ const router = createBrowserRouter([
       {
         path: routes.login,
         element: <Login />
-      },
-      {
-        path: routes.signUp,
-        element: <SignUp />
       }
     ]
   }

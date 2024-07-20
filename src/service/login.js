@@ -1,11 +1,19 @@
 import axios from 'axios'
+import { toast } from 'material-react-toastify'
 
-export const handleFetchUserData = async () => {
-  const { data } = await axios({
-    method: 'GET',
-    url: 'https://random-data-api.com/api/v3/projects/9251e080-4e1f-4ade-9602-c1f33ad3e16e?api_key=FwnApaekjZA4sWJRbiTVIg',
+export const handleLogin = async (
+  username = 'testadmin',
+  password = 'testadmin'
+) => {
+  const data = await axios({
+    method: 'POST',
+    url: 'https://untitled-twkmuar27a-uc.a.run.app/api/login/',
     headers: {
       'Content-Type': 'application/json'
+    },
+    data: {
+      username,
+      password
     }
   })
   return data

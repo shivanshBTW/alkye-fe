@@ -24,3 +24,10 @@ export const setFormEmail = email => {
     payload: email
   }
 }
+
+export const setFormPassword = password => {
+  return {
+    type: 'SET_FORM_PASSWORD',
+    payload: password
+  }
+}
