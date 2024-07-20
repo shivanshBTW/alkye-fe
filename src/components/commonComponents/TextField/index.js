@@ -8,6 +8,7 @@ import {
 } from './style.js'
 
 import passwordEye from '../../../assets/images/login/passwordEye.svg'
+import passwordEyeClosed from '../../../assets/images/login/passwordEyeClosed.svg'
 import { useState } from 'react'
 
 function TextField (props) {
@@ -26,12 +27,21 @@ function TextField (props) {
           {...rest}
         />
         {isTypePassword ? (
-          <img
-            css={viewPasswordToggleStyle}
-            src={passwordEye}
-            alt=''
-            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-          />
+          isPasswordVisible ? (
+            <img
+              src={passwordEyeClosed}
+              alt='password-eye-closed'
+              css={viewPasswordToggleStyle}
+              onClick={() => setIsPasswordVisible(false)}
+            />
+          ) : (
+            <img
+              src={passwordEye}
+              alt='password-eye'
+              css={viewPasswordToggleStyle}
+              onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+            />
+          )
         ) : null}
       </div>
     </div>

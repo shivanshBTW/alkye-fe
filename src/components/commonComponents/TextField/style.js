@@ -40,8 +40,9 @@ export const inputStyle = fullWidth => css`
 
 export const viewPasswordToggleStyle = css`
   position: absolute;
-  right: 15px;
+  right: ${theme.spacing(6)};
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  width: 24px;
 `

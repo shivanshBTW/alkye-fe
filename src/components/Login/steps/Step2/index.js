@@ -39,8 +39,8 @@ function Step2 (props) {
         <div css={inputSectionContainer}>
           <TextField
             fullWidth
-            type='email'
-            placeholder='Email'
+            type='password'
+            placeholder='Choose a password'
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
