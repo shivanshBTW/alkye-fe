@@ -13,7 +13,7 @@ export const loginSectionContainer = css`
   flex-direction: column;
   row-gap: 80px;
   background: ${theme.main.paper};
-  padding: 100px 90px;
+  padding: 100px 90px 150px;
   border-radius: 50px;
 `
 

@@ -14,7 +14,7 @@ export const theme = {
 
     mainTextColor: '#000000',
     secondaryTextColor: '#000000',
-    tertiaryTextColor: '#000000',
+    tertiaryTextColor: '#636363',
     posterNameColor: '#000000',
     linkColor: '#000000',
 
@@ -38,7 +38,7 @@ export const theme = {
     primaryButtonColorDisabled: '#FFFFFF',
     mainTextColorDisabled: '#FFFFFF'
   },
-  spacing: (multiplier = 1) => spacing * multiplier,
+  spacing: (multiplier = 1) => spacing * multiplier + 'px',
   typography: {
     fontWeightLight: css`
       font-weight: 300;

@@ -10,3 +10,17 @@ export const logoutUser = () => {
     type: 'LOGOUT_USER'
   }
 }
+
+export const updateFormData = data => {
+  return {
+    type: 'UPDATE_FORM_DATA',
+    payload: data
+  }
+}
+
+export const setEmail = email => {
+  return {
+    type: 'SET_FORM_EMAIL',
+    payload: email
+  }
+}

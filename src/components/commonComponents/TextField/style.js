@@ -17,17 +17,13 @@ export const inputComponentContainer = css`
 `
 
 export const inputStyle = fullWidth => css`
-  padding: 12px;
+  padding: ${theme.spacing(3.5)} ${theme.spacing(6)};
   background: ${theme.main.paper};
   border: 1.5px solid #35373b;
   border-radius: 4px;
   outline: none;
 
-  font-family: Söhne Test;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 50px;
-  text-align: left;
+  ${theme.typography.h6}
   color: ${theme.main.mainTextColor};
 
   ${fullWidth

@@ -10,6 +10,7 @@ import {
 } from '../style.js'
 import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
+import { setEmail } from '../../../../redux/actions/login.js'
 
 function Step1 (props) {
   const { email = '', setEmail, handleLogin, isLoggingIn } = props
@@ -28,6 +29,7 @@ function Step1 (props) {
       <div css={inputSectionContainer}>
         <TextField
           fullWidth
+          type='email'
           placeholder='Email'
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -49,4 +51,10 @@ const mapStateToProps = ({
   }
 }
 
-export default connect(mapStateToProps)(Step1)
+const mapDispatchToProps = dispatch => {
+  return {
+    setEmail: email => dispatch(setEmail(email))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Step1)

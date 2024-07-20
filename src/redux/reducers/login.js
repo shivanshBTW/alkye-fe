@@ -32,6 +32,14 @@ const loginReducer = (state = initialState, action) => {
           ...action.payload
         }
       }
+    case 'SET_FORM_EMAIL':
+      return {
+        ...state,
+        formData: {
+          ...state.formData,
+          email: action.payload
+        }
+      }
     default:
       return state
   }

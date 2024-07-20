@@ -8,7 +8,7 @@ export const stepRootStyle = css`
 `
 
 export const stepDetailsSectionStyle = css`
-  flex: 0.5;
+  flex: 0.4;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -31,8 +31,9 @@ export const subTextStyle = css`
 `
 
 export const inputSectionContainer = css`
-  flex-grow: 1;
+  flex: 0.6;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  padding-top: 35px;
 `

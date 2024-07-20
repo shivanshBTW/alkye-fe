@@ -4,7 +4,7 @@ import { theme } from '../../../config/themes/light'
 export const createPostRoot = css`
   margin: 0 auto;
   padding: 24px 20px;
-  background-color: ${theme.main.main.paper};
+  background-color: ${theme.main.paper};
   border-radius: 8px;
   width: 100%;
   box-sizing: border-box;
