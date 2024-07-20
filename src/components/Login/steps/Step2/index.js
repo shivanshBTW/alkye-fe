@@ -6,7 +6,8 @@ import {
   stepDetailsSectionStyle,
   stepNumberStyle,
   subTextStyle,
-  titleInstructionStyle
+  titleInstructionStyle,
+  disclaimerStyle
 } from '../style.js'
 import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
@@ -14,12 +15,7 @@ import { setFormEmail } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
 
 function Step2 (props) {
-  const {
-    email: formEmail = '',
-    setFormEmail,
-    handleLogin,
-    isLoggingIn
-  } = props
+  const { email: formEmail = '', setFormEmail, isLoggingIn } = props
 
   const [email, setEmail] = useState(formEmail)
 
@@ -28,28 +24,41 @@ function Step2 (props) {
     // handleLogin()
   }
   return (
-    <div css={stepRootStyle}>
-      <div css={stepDetailsSectionStyle}>
-        <div css={stepNumberStyle}>Step 2</div>
-        <div css={titleInstructionStyle}>
-          Enter your email address to continue
+    <div>
+      <div css={stepRootStyle}>
+        <div css={stepDetailsSectionStyle}>
+          <div css={stepNumberStyle}>Step 2</div>
+          <div css={titleInstructionStyle}>Create an account to continue</div>
+          <div css={subTextStyle}>
+            You’ll be able to log in to Dingoo with this email address and
+            password.
+          </div>
         </div>
-        <div css={subTextStyle}>
-          Log in to your account. If you don’t have one, you will be prompted to
-          create one.
+        <div css={inputSectionContainer}>
+          <TextField
+            fullWidth
+            type='email'
+            placeholder='Email'
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <Button
+            onClick={handleSubmit}
+            isLoading={isLoggingIn}
+            align='flex-end'
+          >
+            Continue
+          </Button>
         </div>
       </div>
-      <div css={inputSectionContainer}>
-        <TextField
-          fullWidth
-          type='email'
-          placeholder='Email'
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <Button onClick={handleSubmit} isLoading={isLoggingIn} align='flex-end'>
-          Continue
-        </Button>
+      <div css={disclaimerStyle}>
+        Dingoo will use your data to personalise and improve your Dingoo
+        experience and to send you information about Dingoo. You can change your
+        communication preferences anytime. We may use your data as described in
+        our Privacy Policy, including sharing it with The Test of Companies. By
+        clicking "Agree & Continue", you agree to our Subscriber Agreement and
+        acknowledge that you have read our Privacy Policy and Collection
+        Statement.
       </div>
     </div>
   )

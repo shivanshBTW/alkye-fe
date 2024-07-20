@@ -37,3 +37,10 @@ export const inputSectionContainer = css`
   row-gap: 20px;
   padding-top: 35px;
 `
+
+export const disclaimerStyle = css`
+  ${theme.typography.body2}
+  ${theme.typography.fontWeightRegular}
+  color: ${theme.main.tertiaryTextColor};
+  margin-top: 55px;
+`
