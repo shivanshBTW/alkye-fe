@@ -13,8 +13,8 @@ export const buttonContainerRoot = align => css`
 `
 
 export const buttonStyle = ({ fullWidth, disabled }) => css`
-  padding: 18px;
-  min-width: 230px;
+  padding: ${theme.spacing(2)};
+  min-width: ${theme.spacing(28.75)};
   border: none;
   outline: none;
   cursor: pointer;
@@ -22,11 +22,11 @@ export const buttonStyle = ({ fullWidth, disabled }) => css`
   ${theme.typography.h6};
   background: ${theme.main.primaryButtonColor};
   color: ${theme.inverted.mainTextColor};
-  border-radius: 10px;
+  border-radius: ${theme.spacing(1.25)};
 
   @media (max-width: 768px) {
-    padding: 12px;
-    min-width: 120px;
+    padding: ${theme.spacing(1.5)};
+    min-width: ${theme.spacing(15)};
     border-radius: 5px;
     ${theme.typography.fontWeightExtraBold};
   }

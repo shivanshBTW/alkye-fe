@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 
 const spacing = 8
+const getSpacing = (multiplier = 1) => spacing * multiplier + 'px'
 const fontFamily = css`
   font-family: Söhne Test;
 `
@@ -38,7 +39,7 @@ export const theme = {
     primaryButtonColorDisabled: '#FFFFFF',
     mainTextColorDisabled: '#FFFFFF'
   },
-  spacing: (multiplier = 1) => spacing * multiplier + 'px',
+  spacing: getSpacing,
   typography: {
     fontWeightLight: css`
       font-weight: 300;
@@ -60,14 +61,22 @@ export const theme = {
     `,
     h1: css`
       ${fontFamily};
-      font-size: clamp(40px, 18px + 3.5vw, 56px);
+      font-size: clamp(
+        ${getSpacing(5)},
+        ${getSpacing(2.25)} + 3.5vw,
+        ${getSpacing(7)}
+      );
       font-weight: 600;
       line-height: 1.1142857142857143;
       letter-spacing: -0.2;
     `,
     h2: css`
       ${fontFamily};
-      font-size: clamp(24px, 16px + 1.4286vw, 36px);
+      font-size: clamp(
+        ${getSpacing(3)},
+        ${getSpacing(2)} + 1.4286vw,
+        ${getSpacing(3.5)}
+      );
       font-weight: 600;
       line-height: 1.2222222222222223;
       letter-spacing: -0.2;
@@ -75,27 +84,27 @@ export const theme = {
     `,
     h3: css`
       ${fontFamily};
-      font-size: 36px;
+      font-size: ${getSpacing(3.5)};
       line-height: 1.2222222222222223;
       letter-spacing: 0.2;
       font-weight: 400;
       @media (max-width: 768px) {
-        font-size: 24px;
+        font-size: ${getSpacing(2)};
       }
     `,
     h4: css`
       ${fontFamily};
-      font-size: 30px;
+      font-size: ${getSpacing(2.75)};
       line-height: 1.5;
       letter-spacing: 0.2;
       font-weight: 400;
       @media (max-width: 768px) {
-        font-size: 24px;
+        font-size: ${getSpacing(2)};
       }
     `,
     h5: css`
       ${fontFamily};
-      font-size: 24px;
+      font-size: ${getSpacing(2)};
       line-height: 1.5;
       letter-spacing: 0.1;
       color: hsl(210, 100%, 70%);
@@ -103,16 +112,16 @@ export const theme = {
     `,
     h6: css`
       ${fontFamily};
-      font-size: 20px;
+      font-size: ${getSpacing(2.5)};
       line-height: 1.5;
       font-weight: 500;
       @media (max-width: 768px) {
-        font-size: 12px;
+        font-size: ${getSpacing(1.5)};
       }
     `,
     button: css`
       ${fontFamily};
-      font-size: 14px;
+      font-size: ${getSpacing(1.75)};
       text-transform: initial;
       font-weight: 700;
       letter-spacing: 0;
@@ -120,30 +129,30 @@ export const theme = {
     `,
     subtitle1: css`
       ${fontFamily};
-      font-size: 16px;
+      font-size: ${getSpacing(2)};
       line-height: 1.3333333333333333;
       letter-spacing: 0;
       font-weight: 500;
     `,
     subtitle2: css`
       ${fontFamily};
-      font-size: 14px;
+      font-size: ${getSpacing(1.75)};
       font-weight: 500;
       line-height: 1.57;
     `,
     body1: css`
       ${fontFamily};
-      font-size: 16px;
+      font-size: ${getSpacing(2)};
       line-height: 1.5;
       letter-spacing: 0;
       font-weight: 400;
       @media (max-width: 768px) {
-        font-size: 10px;
+        font-size: ${getSpacing(1.25)};
       }
     `,
     body2: css`
       ${fontFamily};
-      font-size: 14px;
+      font-size: ${getSpacing(1.75)};
       line-height: 1.5;
       letter-spacing: 0;
       font-weight: 400;
@@ -153,15 +162,15 @@ export const theme = {
     `,
     caption: css`
       ${fontFamily};
-      font-size: 12px;
-      line-height: 24px;
+      font-size: ${getSpacing(1.5)};
+      line-height: ${getSpacing(3)};
       letter-spacing: 0;
       font-weight: 700;
     `,
     overline: css`
       ${fontFamily};
       font-weight: 400;
-      font-size: 12px;
+      font-size: ${getSpacing(1.5)};
       line-height: 2.66;
       text-transform: uppercase;
     `,

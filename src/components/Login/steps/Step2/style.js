@@ -3,7 +3,7 @@ import { theme } from '../../../../config/themes/light'
 
 export const buttonStyle = css`
   min-width: unset;
-  padding: 18px 34px;
+  padding: ${theme.spacing(2)} ${theme.spacing(4)};
   text-wrap: nowrap;
 `
 

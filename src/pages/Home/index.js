@@ -23,6 +23,7 @@ import Carousel from '../../components/commonComponents/carousel/index.js'
 import { theme } from '../../config/themes/light.js'
 import headerLogo from '../../assets/images/common/testLogoWhite.svg'
 import { underlineStyle } from '../../components/commonComponents/commonStyles.js'
+import { isMobile } from 'react-device-detect'
 
 function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
@@ -72,7 +73,8 @@ function Home (props) {
           </div>
           <div css={greetingText}>
             <span>
-              Hello <span css={underlineStyle}>{customerName}</span>
+              Hello{' '}
+              <span css={!isMobile && underlineStyle}>{customerName}</span>
             </span>
             <img
               src={logoutIcon}
