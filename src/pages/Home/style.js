@@ -27,17 +27,23 @@ export const headerSectionStyle = css`
 
 export const headerLogoContainer = css`
   margin-bottom: ${theme.spacing(10)};
+  @media (max-width: 768px) {
+    margin-bottom: ${theme.spacing(7)};
+  }
 `
 
 export const greetingText = css`
   ${theme.typography.h4};
-  color: ${theme.typography.fontWeightMedium};
+  ${theme.typography.fontWeightMedium};
   color: ${theme.inverted.mainTextColor};
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: ${theme.spacing(2)};
   margin-bottom: ${theme.spacing(3)};
+  @media (max-width: 768px) {
+    margin-bottom: ${theme.spacing(0)};
+  }
 `
 
 export const logoutIconStyle = css`
@@ -56,6 +62,7 @@ export const subtitleText = css`
   @media (max-width: 768px) {
     width: 100%;
     max-width: ${theme.spacing(72.5)};
+    color: ${theme.typography.fontWeightSemiBold};
   }
 `
 
@@ -79,6 +86,9 @@ export const carouselTitleStyle = css`
   color: ${theme.inverted.mainTextColor};
   margin-bottom: ${theme.spacing(6)};
   padding: 0 ${theme.spacing(8)};
+  @media (max-width: 768px) {
+    padding: 0 ${theme.spacing(2)};
+  }
 `
 
 // aspect-ratio: 700/425;
@@ -87,6 +97,9 @@ export const carouselImageContainerStyle = css`
   height: ${theme.spacing(87.5)};
   overflow: hidden;
   border-radius: ${theme.spacing(5)};
+  @media (max-width: 768px) {
+    height: ${theme.spacing(43.75)};
+  }
 `
 
 export const carouselImageStyle = css`

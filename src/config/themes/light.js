@@ -89,6 +89,9 @@ export const theme = {
       line-height: 1.5;
       letter-spacing: 0.2;
       font-weight: 400;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
     `,
     h5: css`
       ${fontFamily};
@@ -105,7 +108,6 @@ export const theme = {
       font-weight: 500;
       @media (max-width: 768px) {
         font-size: 12px;
-        font-weight: 500;
       }
     `,
     button: css`

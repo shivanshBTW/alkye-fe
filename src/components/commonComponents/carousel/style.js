@@ -18,7 +18,7 @@ export const slidesContainer = css`
   touch-action: pan-y pinch-zoom;
   margin-left: calc(${theme.spacing(1)} * -1);
   @media (max-width: 768px) {
-    margin-left: calc(${theme.spacing(0.5)} * -1);
+    margin-left: calc(${theme.spacing(2)} * -1);
   }
 `
 
@@ -82,6 +82,14 @@ export const dotStyle = css`
     display: flex;
     align-items: center;
     content: '';
+    @media (max-width: 768px) {
+      width: ${theme.spacing(2)};
+      height: ${theme.spacing(2)};
+    }
+  }
+  @media (max-width: 768px) {
+    width: ${theme.spacing(2.4)};
+    height: ${theme.spacing(2.4)};
   }
 `
 
