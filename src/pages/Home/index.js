@@ -7,9 +7,10 @@ import {
   carouselImageStyle,
   contentContainer,
   greetingText,
+  headerLogoContainer,
+  headerSectionStyle,
   homeRoot,
   logoutIconStyle,
-  postsSectionStyle,
   subtitleText
 } from './style.js'
 import PostCard from '../../components/Home/PostCard/index.js'
@@ -20,24 +21,22 @@ import { logoutUser } from '../../redux/actions/login.js'
 import { fetchPosts } from '../../service/home.js'
 import { toast } from 'material-react-toastify'
 import Carousel from '../../components/commonComponents/carousel/index.js'
+import { theme } from '../../config/themes/light.js'
+import headerLogo from '../../assets/images/common/testLogoWhite.svg'
 
 function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
-  const {
-    first_name: firstName,
-    userData: { customer_name: customerName, token } = {}
-  } = currentUserData
+  const { userData: { customer_name: customerName, token } = {} } =
+    currentUserData
   console.log('customerName', customerName)
   const [slideList, setSlideList] = useState([])
 
   const handleFetchData = useCallback(async () => {
     try {
       let { data } = await fetchPosts({ token })
-      console.log('data', data)
       setPostList(data)
     } catch (e) {
       toast.error('Failed to fetch posts')
-      console.log(e)
     }
   }, [setPostList, token])
 
@@ -67,33 +66,31 @@ function Home (props) {
     toast.success('Successfully logged out')
   }
 
-  // const SLIDES = [
-  //   ({ content: 'Slide 1' },
-  //   { content: 'Slide 2' },
-  //   { content: 'Slide 3' },
-  //   { content: 'Slide 4' },
-  //   { content: 'Slide 5' })
-  // ]
-
   return (
     <div css={homeRoot}>
       <div css={contentContainer}>
-        <div css={greetingText}>
-          <span>Hello {customerName}</span>
-          <img
-            src={logoutIcon}
-            alt='logout'
-            css={logoutIconStyle}
-            title='Logout'
-            onClick={handleLogout}
-          />
+        <div css={headerSectionStyle}>
+          <div css={headerLogoContainer}>
+            <img src={headerLogo} alt='' />
+          </div>
+          <div css={greetingText}>
+            <span>Hello {customerName}</span>
+            <img
+              src={logoutIcon}
+              alt='logout'
+              css={logoutIconStyle}
+              title='Logout'
+              onClick={handleLogout}
+            />
+          </div>
+          <div css={subtitleText}>Hope you having a good day!</div>
         </div>
-        <div css={subtitleText}>Hope you having a good day!</div>
 
         <div css={carouselContainer}>
           <Carousel
             slides={slideList}
-            slideWidth='400px'
+            slideWidth={theme.spacing(50)}
+            slideSpacing={theme.spacing(8)}
             options={{
               align: 'start',
               dragFree: true,
@@ -106,6 +103,7 @@ function Home (props) {
           <Carousel
             slides={slideList}
             slideWidth='400px'
+            slideSpacing='60px'
             options={{
               align: 'start',
               dragFree: true,

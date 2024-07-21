@@ -8,8 +8,6 @@ export const homeRoot = css`
 export const contentContainer = css`
   width: 100%;
   box-sizing: border-box;
-  max-width: 700px;
-  margin: 0 auto;
   padding: 70px 0;
 
   display: flex;
@@ -20,13 +18,23 @@ export const contentContainer = css`
   }
 `
 
+export const headerSectionStyle = css`
+  padding: 0 ${theme.spacing(14)};
+`
+
+export const headerLogoContainer = css`
+  margin-bottom: ${theme.spacing(10)};
+`
+
 export const greetingText = css`
   ${theme.typography.h4};
   color: ${theme.typography.fontWeightMedium};
   color: ${theme.inverted.mainTextColor};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: ${theme.spacing(2)};
+  margin-bottom: ${theme.spacing(3)};
 `
 
 export const logoutIconStyle = css`

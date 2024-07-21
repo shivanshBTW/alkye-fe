@@ -28,10 +28,17 @@ export const slideStyle = ({
   min-width: 0;
   padding-left: ${slideSpacing};
   color: ${theme.inverted.mainTextColor};
+  &:first-of-type {
+    padding-left: ${theme.spacing(14)};
+  }
+  &:last-of-type {
+    padding-right: ${theme.spacing(14)};
+  }
 `
 
 export const dotsRootStyle = css`
   margin-top: ${theme.spacing(2)};
+  margin-right: ${theme.spacing(8)};
 `
 
 export const dotsContainerStyle = css`
@@ -55,16 +62,16 @@ export const dotStyle = css`
   border: 0;
   padding: 0;
   margin: 0;
-  width: 2.6rem;
-  height: 2.6rem;
+  width: ${theme.spacing(2.6)};
+  height: ${theme.spacing(2.6)};
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   &:after {
-    box-shadow: inset 0 0 0 0.2rem ${theme.inverted.tertiaryTextColor};
-    width: 1.4rem;
-    height: 1.4rem;
+    background-color: #888888;
+    width: ${theme.spacing(2)};
+    height: ${theme.spacing(2)};
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -74,6 +81,6 @@ export const dotStyle = css`
 
 export const selectedDotStyle = css`
   &:after {
-    box-shadow: inset 0 0 0 0.2rem ${theme.inverted.mainTextColor};
+    background-color: ${theme.inverted.mainTextColor};
   }
 `
