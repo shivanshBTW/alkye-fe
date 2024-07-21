@@ -15,16 +15,12 @@ import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
 import { loginUser, setFormPassword } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
-import {
-  buttonStyle,
-  passowordInstructionsStyle,
-  passwordInstructionsStyle
-} from './style.js'
+import { buttonStyle, passwordInstructionsStyle } from './style.js'
 import { handleLogin } from '../../../../service/login.js'
 import { toast } from 'material-react-toastify'
 
 function Step2 (props) {
-  const { email: formEmail, setFormPassword, loginUser, isLoggingIn } = props
+  const { email: formEmail, loginUser, isLoggingIn } = props
 
   const [password, setPassword] = useState('')
 
