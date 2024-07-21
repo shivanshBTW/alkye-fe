@@ -47,8 +47,14 @@ export const inputSectionContainer = css`
   row-gap: ${theme.spacing(2.5)};
   padding-top: ${theme.spacing(5)};
   @media (max-width: 768px) {
+    row-gap: ${theme.spacing(1.5)};
     padding-top: ${theme.spacing(1)};
   }
+`
+
+export const inputLabelStyle = css`
+  ${theme.typography.h6};
+  ${theme.typography.fontWeightRegular};
 `
 
 export const buttonSectionContainer = css`
@@ -57,11 +63,20 @@ export const buttonSectionContainer = css`
   justify-content: space-between;
   align-items: center;
   column-gap: ${theme.spacing(5)};
+  @media (max-width: 768px) {
+    margin-top: ${theme.spacing(1)};
+    column-gap: ${theme.spacing(1.5)};
+  }
 `
 
 export const disclaimerStyle = css`
-  ${theme.typography.body2}
-  ${theme.typography.fontWeightRegular}
+  ${theme.typography.body2};
+  ${theme.typography.fontWeightRegular};
   color: ${theme.main.tertiaryTextColor};
   margin-top: ${theme.spacing(7)};
+  @media (max-width: 768px) {
+    margin-top: ${theme.spacing(3)};
+    line-height: ${theme.spacing(2)};
+    ${theme.typography.fontWeightLight};
+  }
 `

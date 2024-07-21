@@ -8,13 +8,18 @@ import {
   subTextStyle,
   titleInstructionStyle,
   disclaimerStyle,
-  buttonSectionContainer
+  buttonSectionContainer,
+  inputLabelStyle
 } from '../style.js'
 import TextField from '../../../commonComponents/TextField'
 import Button from '../../../commonComponents/Button'
 import { loginUser, setFormPassword } from '../../../../redux/actions/login.js'
 import { useState } from 'react'
-import { buttonStyle } from './style.js'
+import {
+  buttonStyle,
+  passowordInstructionsStyle,
+  passwordInstructionsStyle
+} from './style.js'
 import { handleLogin } from '../../../../service/login.js'
 import { toast } from 'material-react-toastify'
 
@@ -51,6 +56,9 @@ function Step2 (props) {
           </div>
         </div>
         <div css={inputSectionContainer}>
+          <div css={inputLabelStyle}>
+            Enter a password to create your account with 
+          </div>
           <TextField
             fullWidth
             type='password'
@@ -60,7 +68,7 @@ function Step2 (props) {
             onChange={e => setPassword(e.target.value)}
           />
           <div css={buttonSectionContainer}>
-            <div>
+            <div css={passwordInstructionsStyle}>
               Use a minimum of 6 characters (case sensitive) with at least one
               number or special character.
             </div>

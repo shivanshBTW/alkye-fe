@@ -19,10 +19,7 @@ export const buttonStyle = ({ fullWidth, disabled }) => css`
   outline: none;
   cursor: pointer;
 
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19.36px;
+  ${theme.typography.h6};
   background: ${theme.main.primaryButtonColor};
   color: ${theme.inverted.mainTextColor};
   border-radius: 10px;
@@ -31,6 +28,7 @@ export const buttonStyle = ({ fullWidth, disabled }) => css`
     padding: 12px;
     min-width: 120px;
     border-radius: 5px;
+    ${theme.typography.fontWeightExtraBold};
   }
 
   ${fullWidth
