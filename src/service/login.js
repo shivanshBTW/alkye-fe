@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { toast } from 'material-react-toastify'
 
 export const handleLogin = async (username = '', password = '') => {
   const data = await axios({
