@@ -28,17 +28,14 @@ export const slideStyle = ({
   min-width: 0;
   padding-left: ${slideSpacing};
   color: ${theme.inverted.mainTextColor};
-  &:first-of-type {
-    padding-left: ${theme.spacing(14)};
-  }
   &:last-of-type {
-    padding-right: ${theme.spacing(14)};
+    padding-right: ${theme.spacing(8)};
   }
 `
 
 export const dotsRootStyle = css`
   margin-top: ${theme.spacing(2)};
-  margin-right: ${theme.spacing(8)};
+  margin-right: ${theme.spacing(9)};
 `
 
 export const dotsContainerStyle = css`

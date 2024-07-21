@@ -64,6 +64,7 @@ export const postsSectionStyle = css`
 
 export const carouselContainer = css`
   margin: ${theme.spacing(2)} 0;
+  padding-left: ${theme.spacing(6)};
 `
 
 export const carouselTitleStyle = css`
@@ -71,7 +72,7 @@ export const carouselTitleStyle = css`
   ${theme.typography.fontWeightSemiBold};
   color: ${theme.inverted.mainTextColor};
   margin-bottom: ${theme.spacing(6)};
-  padding: 0 ${theme.spacing(14)};
+  padding: 0 ${theme.spacing(8)};
 `
 
 export const carouselImageContainerStyle = css`

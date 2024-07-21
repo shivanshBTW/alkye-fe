@@ -99,7 +99,7 @@ function Home (props) {
             options={{
               align: 'start',
               dragFree: true,
-              loop: true
+              loop: false
             }}
           />
         </div>
@@ -113,7 +113,7 @@ function Home (props) {
             options={{
               align: 'start',
               dragFree: true,
-              loop: true
+              loop: false
             }}
           />
         </div>
