@@ -1,37 +1,50 @@
 import { css } from '@emotion/react'
 import { theme } from '../../../config/themes/light'
 
+const slideSpacing = theme.spacing(8)
+const slideSpacingMobile = theme.spacing(4)
+const slideWidth = theme.spacing(50)
+const slideWidthMobile = theme.spacing(25)
+
 export const carouselRoot = css``
 
 export const carouselContainerSection = css`
   overflow: hidden;
 `
 
-export const slidesContainer = ({
-  slideSpacing = theme.spacing(1)
-} = {}) => css`
+export const slidesContainer = css`
   backface-visibility: hidden;
   display: flex;
   touch-action: pan-y pinch-zoom;
-  margin-left: calc(${slideSpacing} * -1);
+  margin-left: calc(${theme.spacing(1)} * -1);
+  @media (max-width: 768px) {
+    margin-left: calc(${theme.spacing(0.5)} * -1);
+  }
 `
 
-export const slideStyle = ({
-  slideWidth = '30%',
-  slideSpacing = theme.spacing(1)
-} = {}) => css`
+export const slideStyle = css`
   flex: 0 0 ${slideWidth};
   min-width: 0;
   padding-left: ${slideSpacing};
   color: ${theme.inverted.mainTextColor};
+  @media (max-width: 768px) {
+    flex: 0 0 ${slideWidthMobile};
+    padding-left: ${slideSpacingMobile};
+  }
   &:last-of-type {
-    padding-right: ${theme.spacing(8)};
+    padding-right: ${slideSpacing};
+    @media (max-width: 768px) {
+      padding-right: ${slideSpacingMobile};
+    }
   }
 `
 
 export const dotsRootStyle = css`
   margin-top: ${theme.spacing(2)};
   margin-right: ${theme.spacing(9)};
+  @media (max-width: 768px) {
+    margin-right: ${theme.spacing(4)};
+  }
 `
 
 export const dotsContainerStyle = css`

@@ -90,8 +90,6 @@ function Home (props) {
           {slideList.length ? (
             <Carousel
               slides={slideList}
-              slideWidth={theme.spacing(50)}
-              slideSpacing={theme.spacing(8)}
               options={{
                 align: 'start',
                 dragFree: true,
@@ -108,8 +106,6 @@ function Home (props) {
           {slideList.length ? (
             <Carousel
               slides={slideList}
-              slideWidth={theme.spacing(50)}
-              slideSpacing={theme.spacing(8)}
               options={{
                 align: 'start',
                 dragFree: true,

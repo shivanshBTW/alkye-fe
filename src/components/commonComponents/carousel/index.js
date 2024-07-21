@@ -19,12 +19,7 @@ import { theme } from '../../../config/themes/light'
 // import '../css/embla.css'
 
 const Carousel = props => {
-  const {
-    slides,
-    options,
-    slideWidth = '30%',
-    slideSpacing = theme.spacing(1)
-  } = props
+  const { slides, options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
   const onNavButtonClick = useCallback(emblaApi => {
@@ -47,17 +42,11 @@ const Carousel = props => {
   return (
     <section css={carouselRoot}>
       <div css={carouselContainerSection} ref={emblaRef}>
-        <div css={slidesContainer()}>
+        <div css={slidesContainer}>
           {slides.map((contentData, index) => {
             const { content } = contentData || {}
             return (
-              <div
-                css={slideStyle({
-                  slideWidth,
-                  slideSpacing
-                })}
-                key={index}
-              >
+              <div css={slideStyle} key={index}>
                 {content}
               </div>
             )
