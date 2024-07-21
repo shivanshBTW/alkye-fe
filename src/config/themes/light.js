@@ -30,7 +30,7 @@ export const theme = {
 
     mainTextColor: '#FFFFFF',
     secondaryTextColor: '#FFFFFF',
-    tertiaryTextColor: '#FFFFFF',
+    tertiaryTextColor: '#ECECEC',
     posterNameColor: '#FFFFFF',
     linkColor: '#FFFFFF',
 

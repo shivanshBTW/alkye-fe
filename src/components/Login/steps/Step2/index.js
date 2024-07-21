@@ -28,16 +28,16 @@ function Step2 (props) {
       try {
         let res = await handleLogin()
         // let res = await handleLogin(formEmail, password)
-        const { data } = res || {}
         loginUser({
-          userData: data,
+          userData: res,
           email: formEmail,
           password
         })
         toast.success('Login successful')
       } catch (error) {
-        const msg = error?.response?.data?.non_field_errors[0]
+        const msg = error?.response?.data?.non_field_errors[0] || error.message
         toast.error(`${msg ? msg : 'Login failed'}`)
+        console.log('error', error.message)
       }
     }
   }

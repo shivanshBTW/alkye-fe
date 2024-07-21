@@ -2,6 +2,10 @@ import { css } from '@emotion/react'
 import { theme } from '../../config/themes/light'
 
 export const homeRoot = css`
+  background-color: ${theme.inverted.background};
+`
+
+export const contentContainer = css`
   width: 100%;
   box-sizing: border-box;
   max-width: 700px;
@@ -17,12 +21,9 @@ export const homeRoot = css`
 `
 
 export const greetingText = css`
-  font-family: Inter;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 33.89px;
-  text-align: left;
-
+  ${theme.typography.h4};
+  color: ${theme.typography.fontWeightMedium};
+  color: ${theme.inverted.mainTextColor};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,11 +36,9 @@ export const logoutIconStyle = css`
 `
 
 export const subtitleText = css`
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  color: ${theme.main.tertiaryTextColor};
+  ${theme.typography.h6};
+  color: ${theme.typography.fontWeightSemiBold};
+  color: ${theme.inverted.tertiaryTextColor};
   margin-bottom: 25px;
   width: 580px;
   box-sizing: border-box;
@@ -53,4 +52,23 @@ export const postsSectionStyle = css`
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+`
+
+export const carouselContainer = css`
+  margin: ${theme.spacing(2)} 0;
+`
+
+export const carouselImageContainerStyle = css`
+  width: 100%;
+  height: 700px;
+  aspect-ratio: 700/425;
+  overflow: hidden;
+  border-radius: 40px;
+`
+
+export const carouselImageStyle = css`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 `

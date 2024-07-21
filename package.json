@@ -16,6 +16,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "border-gradient-radius": "^1.0.7",
+    "embla-carousel-autoplay": "^8.1.7",
+    "embla-carousel-react": "^8.1.7",
     "emoji-picker-react": "^4.11.1",
     "material-react-toastify": "^10.0.2",
     "moment": "^2.30.1",
