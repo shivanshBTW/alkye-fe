@@ -2,43 +2,63 @@ import { css } from '@emotion/react'
 import { theme } from '../../../config/themes/light'
 
 export const footerRoot = css`
-  padding: 105px;
+  padding: ${theme.spacing(13)};
   display: flex;
   flex-direction: column;
-  row-gap: 80px;
+  row-gap: ${theme.spacing(10)};
   background: ${theme.inverted.paper};
+  color: ${theme.inverted.mainTextColor};
+  overflow: hidden;
+  @media (max-width: 768px) {
+    row-gap: ${theme.spacing(5)};
+    padding: ${theme.spacing(4)};
+  }
 `
 
 export const iconsContainerStyle = css`
   display: flex;
   flex-direction: row;
-  column-gap: 50px;
+  column-gap: ${theme.spacing(6)};
+  @media (max-width: 768px) {
+    column-gap: ${theme.spacing(3)};
+  }
 `
 
 export const socialIconStyle = css`
-  width: 50px;
+  width: ${theme.spacing(6)};
+  @media (max-width: 768px) {
+    width: ${theme.spacing(3)};
+  }
 `
 
 export const footerLinksContainer = css`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 `
 
 export const linkGroupContainerStyle = css`
   display: flex;
   flex-direction: column;
-  margin-right: 40px;
+  margin-right: ${theme.spacing(5)};
+  @media (max-width: 768px) {
+    flex: 1 1 50%;
+    margin-right: 0;
+  }
 `
 
 export const footerLinkStyle = css`
-  font-family: Söhne Test;
+  ${theme.typography.h6};
   color: ${theme.inverted.mainTextColor};
-  margin-bottom: 20px;
+  margin-bottom: ${theme.spacing(2.5)};
   text-decoration: none;
+  @media (max-width: 768px) {
+    margin-bottom: ${theme.spacing(1.5)};
+  }
+`
 
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 50px;
-  text-align: left;
+export const copyRightStyle = css`
+  ${theme.typography.h6};
+  color: ${theme.inverted.mainTextColor};
 `

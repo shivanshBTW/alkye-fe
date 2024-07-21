@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import {
+  copyRightStyle,
   footerLinksContainer,
   footerLinkStyle,
   footerRoot,
@@ -93,7 +94,7 @@ function Footer (props) {
         })}
       </div>
 
-      <div>© Alkye Test</div>
+      <div css={copyRightStyle}>© Alkye Test</div>
     </div>
   )
 }

@@ -100,6 +100,10 @@ export const theme = {
       font-size: 20px;
       line-height: 1.5;
       font-weight: 500;
+      @media (max-width: 768px) {
+        font-size: 12px;
+        font-weight: 500;
+      }
     `,
     button: css`
       ${fontFamily};
