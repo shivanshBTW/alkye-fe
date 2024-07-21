@@ -184,15 +184,3 @@ export const theme = {
     `
   }
 }
-// let typography = {
-//   fontFamily:
-//     'Söhne Test,"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
-//   htmlFontSize: 16,
-//   fontSize: 14,
-//   fontWeightLight: 300,
-//   fontWeightRegular: 400,
-//   fontWeightMedium: 500,
-//   fontWeightBold: 700,
-//   fontWeightSemiBold: 600,
-//   fontWeightExtraBold: 800,
-// }
