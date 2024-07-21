@@ -135,6 +135,9 @@ export const theme = {
       line-height: 1.5;
       letter-spacing: 0;
       font-weight: 400;
+      @media (max-width: 768px) {
+        font-size: 10px;
+      }
     `,
     body2: css`
       ${fontFamily};
@@ -142,6 +145,9 @@ export const theme = {
       line-height: 1.5;
       letter-spacing: 0;
       font-weight: 400;
+      @media (max-width: 768px) {
+        font-size: 7px;
+      }
     `,
     caption: css`
       ${fontFamily};
