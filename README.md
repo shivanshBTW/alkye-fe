@@ -2,11 +2,11 @@
 
 ### Login:
 
-You can input any email and password in the login fields. This will fetch details for a randomly generated mock user from a public API I used. Alternatively, you can go to the sign-up page, which will go through the same process.
+There was no design for a login flow, and no API for the signup flow, so I implemented the sign-up flow design and used the login API in it, I can change any of those or implement both of those if provided with the required dependencies. Rest of the flow is working with performance measured.
 
 ### Home Page:
 
-Once you reach the home page, it will fetch a list of randomly generated posts. Users can also post their thoughts.
+Once you reach the home page, it will fetch a list of posts fetched from the provided API with auth
 
 ### Logout:
 
