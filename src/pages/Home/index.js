@@ -28,7 +28,6 @@ function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
   const { userData: { customer_name: customerName, token } = {} } =
     currentUserData
-  console.log('customerName', customerName)
   const [slideList, setSlideList] = useState([])
 
   const handleFetchData = useCallback(async () => {
@@ -45,11 +44,9 @@ function Home (props) {
   }, [handleFetchData])
 
   useEffect(() => {
-    console.log('postList', postList)
     setSlideList(
       postList.map(post => {
-        const { image_url: imgUrl, title, description } = post
-        console.log('post', post)
+        const { image_url: imgUrl } = post
         return {
           content: (
             <div css={carouselImageContainerStyle}>

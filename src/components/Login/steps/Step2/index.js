@@ -26,8 +26,7 @@ function Step2 (props) {
   const handleSubmit = async () => {
     if (formEmail && password.length >= 6) {
       try {
-        let res = await handleLogin()
-        // let res = await handleLogin(formEmail, password)
+        let res = await handleLogin(formEmail, password)
         loginUser({
           userData: res,
           email: formEmail,
@@ -37,7 +36,6 @@ function Step2 (props) {
       } catch (error) {
         const msg = error?.response?.data?.non_field_errors[0] || error.message
         toast.error(`${msg ? msg : 'Login failed'}`)
-        console.log('error', error.message)
       }
     }
   }

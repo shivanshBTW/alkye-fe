@@ -17,7 +17,6 @@ export const handleLogin = async (
     }
   })
 
-  console.log('loginData', data)
   const { data: { token, user_id } = {} } = data
 
   const userListData = await axios({
@@ -28,7 +27,7 @@ export const handleLogin = async (
       Authorization: `Token ${token}`
     }
   })
-  console.log('userListData', userListData)
+
   const { data: results = [] } = userListData
   const user = results.find(user => user.id === user_id)
   return { token, user_id, ...user }
