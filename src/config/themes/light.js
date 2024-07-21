@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
+import { isMobile } from 'react-device-detect'
 
-const spacing = 8
+const spacing = isMobile ? 8 : 7
 const getSpacing = (multiplier = 1) => spacing * multiplier + 'px'
 const fontFamily = css`
   font-family: Söhne Test;

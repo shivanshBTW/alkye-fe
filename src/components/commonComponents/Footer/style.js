@@ -9,9 +9,14 @@ export const footerRoot = css`
   background: ${theme.inverted.paper};
   color: ${theme.inverted.mainTextColor};
   overflow: hidden;
+  width: fit-content;
+  margin: 0 auto;
   @media (max-width: 768px) {
     row-gap: ${theme.spacing(5)};
     padding: ${theme.spacing(4)};
+
+    width: unset;
+    margin: unset;
   }
 `
 
@@ -22,6 +27,7 @@ export const iconsContainerStyle = css`
   @media (max-width: 768px) {
     column-gap: ${theme.spacing(3)};
   }
+  width: fit-content;
 `
 
 export const socialIconStyle = css`
@@ -34,16 +40,25 @@ export const socialIconStyle = css`
 export const footerLinksContainer = css`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  column-gap: ${theme.spacing(15)};
+  flex-wrap: nowrap;
+  width: fit-content;
+  @media (max-width: 768px) {
+    column-gap: unset;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: unset;
+  }
 `
 
 export const linkGroupContainerStyle = css`
   display: flex;
   flex-direction: column;
   margin-right: ${theme.spacing(5)};
+  white-space: nowrap;
   @media (max-width: 768px) {
-    flex: 1 1 50%;
+    flex: 0 0 50%;
+    flex: 50%;
     margin-right: 0;
   }
 `
@@ -61,4 +76,5 @@ export const footerLinkStyle = css`
 export const copyRightStyle = css`
   ${theme.typography.h6};
   color: ${theme.inverted.mainTextColor};
+  width: fit-content;
 `
