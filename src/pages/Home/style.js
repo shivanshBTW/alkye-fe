@@ -13,7 +13,7 @@ export const contentContainer = css`
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     padding: 70px 20px;
   }
 `
