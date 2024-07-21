@@ -1,10 +1,7 @@
 import axios from 'axios'
 import { toast } from 'material-react-toastify'
 
-export const handleLogin = async (
-  username = 'testadmin',
-  password = 'testadmin'
-) => {
+export const handleLogin = async (username = '', password = '') => {
   const data = await axios({
     method: 'POST',
     url: 'https://untitled-twkmuar27a-uc.a.run.app/api/login/',
