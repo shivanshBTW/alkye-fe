@@ -43,6 +43,7 @@ export const buttonSectionContainer = css`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  column-gap: 40px;
 `
 
 export const disclaimerStyle = css`

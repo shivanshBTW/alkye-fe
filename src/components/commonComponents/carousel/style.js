@@ -1,10 +1,6 @@
 import { css } from '@emotion/react'
 import { theme } from '../../../config/themes/light'
 
-const slideSpacing = theme.spacing(1)
-
-//   max-width: 48rem;
-// margin: auto;
 export const carouselRoot = css``
 
 export const carouselContainerSection = css`

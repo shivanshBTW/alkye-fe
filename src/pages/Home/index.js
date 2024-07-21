@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { useCallback, useEffect, useState } from 'react'
-import CreatePost from '../../components/Home/CreatePost/index.js'
 import {
   carouselContainer,
   carouselImageContainerStyle,
@@ -14,7 +13,6 @@ import {
   logoutIconStyle,
   subtitleText
 } from './style.js'
-import PostCard from '../../components/Home/PostCard/index.js'
 import { connect } from 'react-redux'
 import { updatePostsList } from '../../redux/actions/posts.js'
 import logoutIcon from '../../assets/images/logout-logo.svg'
@@ -92,30 +90,38 @@ function Home (props) {
 
         <div css={carouselContainer}>
           <div css={carouselTitleStyle}>Photography</div>
-          <Carousel
-            slides={slideList}
-            slideWidth={theme.spacing(50)}
-            slideSpacing={theme.spacing(8)}
-            options={{
-              align: 'start',
-              dragFree: true,
-              loop: false
-            }}
-          />
+          {slideList.length ? (
+            <Carousel
+              slides={slideList}
+              slideWidth={theme.spacing(50)}
+              slideSpacing={theme.spacing(8)}
+              options={{
+                align: 'start',
+                dragFree: true,
+                loop: false
+              }}
+            />
+          ) : (
+            <div style={{ height: theme.spacing(87.5) }}>Loading...</div>
+          )}
         </div>
 
         <div css={carouselContainer}>
           <div css={carouselTitleStyle}>Learning</div>
-          <Carousel
-            slides={slideList}
-            slideWidth='400px'
-            slideSpacing='60px'
-            options={{
-              align: 'start',
-              dragFree: true,
-              loop: false
-            }}
-          />
+          {slideList.length ? (
+            <Carousel
+              slides={slideList}
+              slideWidth={theme.spacing(50)}
+              slideSpacing={theme.spacing(8)}
+              options={{
+                align: 'start',
+                dragFree: true,
+                loop: false
+              }}
+            />
+          ) : (
+            <div style={{ height: theme.spacing(87.5) }}>Loading...</div>
+          )}
         </div>
       </div>
     </div>

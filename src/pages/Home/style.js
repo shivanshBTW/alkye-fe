@@ -75,10 +75,10 @@ export const carouselTitleStyle = css`
   padding: 0 ${theme.spacing(8)};
 `
 
+// aspect-ratio: 700/425;
 export const carouselImageContainerStyle = css`
   width: 100%;
-  height: 700px;
-  aspect-ratio: 700/425;
+  height: ${theme.spacing(87.5)};
   overflow: hidden;
   border-radius: 40px;
 `

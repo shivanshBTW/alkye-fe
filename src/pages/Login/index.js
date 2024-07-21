@@ -9,6 +9,7 @@ import { routes } from '../../routes'
 import testLogo from '../../assets/images/login/testLogo.svg'
 import Step1 from '../../components/Login/steps/Step1'
 import Step2 from '../../components/Login/steps/Step2'
+import { displayNone } from '../../components/commonComponents/commonStyles'
 
 function Login (props) {
   const { email: formEmail, isLoggedIn } = props
@@ -25,10 +26,10 @@ function Login (props) {
       <div css={loginSectionContainer}>
         <img src={testLogo} alt='Test' css={logoStyle} />
 
-        <div style={formEmail ? { display: 'none' } : undefined}>
+        <div css={formEmail && displayNone}>
           <Step1 />
         </div>
-        <div style={!formEmail ? { display: 'none' } : undefined}>
+        <div css={!formEmail && displayNone}>
           <Step2 />
         </div>
       </div>
