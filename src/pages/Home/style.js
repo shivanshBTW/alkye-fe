@@ -66,6 +66,14 @@ export const carouselContainer = css`
   margin: ${theme.spacing(2)} 0;
 `
 
+export const carouselTitleStyle = css`
+  ${theme.typography.h4};
+  ${theme.typography.fontWeightSemiBold};
+  color: ${theme.inverted.mainTextColor};
+  margin-bottom: ${theme.spacing(6)};
+  padding: 0 ${theme.spacing(14)};
+`
+
 export const carouselImageContainerStyle = css`
   width: 100%;
   height: 700px;

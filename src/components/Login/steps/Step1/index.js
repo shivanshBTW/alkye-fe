@@ -43,6 +43,7 @@ function Step1 (props) {
         <TextField
           fullWidth
           type='email'
+          autoComplete='username'
           placeholder='Email'
           value={email}
           onChange={e => setEmail(e.target.value)}

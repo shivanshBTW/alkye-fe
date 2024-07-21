@@ -56,6 +56,7 @@ function Step2 (props) {
           <TextField
             fullWidth
             type='password'
+            autoComplete='password'
             placeholder='Choose a password'
             value={password}
             onChange={e => setPassword(e.target.value)}

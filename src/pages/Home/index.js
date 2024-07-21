@@ -5,6 +5,7 @@ import {
   carouselContainer,
   carouselImageContainerStyle,
   carouselImageStyle,
+  carouselTitleStyle,
   contentContainer,
   greetingText,
   headerLogoContainer,
@@ -23,6 +24,7 @@ import { toast } from 'material-react-toastify'
 import Carousel from '../../components/commonComponents/carousel/index.js'
 import { theme } from '../../config/themes/light.js'
 import headerLogo from '../../assets/images/common/testLogoWhite.svg'
+import { underlineStyle } from '../../components/commonComponents/commonStyles.js'
 
 function Home (props) {
   const { postList, currentUserData, setPostList, logoutUser } = props
@@ -74,7 +76,9 @@ function Home (props) {
             <img src={headerLogo} alt='' />
           </div>
           <div css={greetingText}>
-            <span>Hello {customerName}</span>
+            <span>
+              Hello <span css={underlineStyle}>{customerName}</span>
+            </span>
             <img
               src={logoutIcon}
               alt='logout'
@@ -87,6 +91,7 @@ function Home (props) {
         </div>
 
         <div css={carouselContainer}>
+          <div css={carouselTitleStyle}>Photography</div>
           <Carousel
             slides={slideList}
             slideWidth={theme.spacing(50)}
@@ -100,6 +105,7 @@ function Home (props) {
         </div>
 
         <div css={carouselContainer}>
+          <div css={carouselTitleStyle}>Learning</div>
           <Carousel
             slides={slideList}
             slideWidth='400px'

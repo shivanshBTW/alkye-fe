@@ -24,7 +24,13 @@ function Login (props) {
     <div css={loginRoot}>
       <div css={loginSectionContainer}>
         <img src={testLogo} alt='Test' css={logoStyle} />
-        <div>{formEmail ? <Step2 /> : <Step1 />}</div>
+
+        <div style={formEmail ? { display: 'none' } : undefined}>
+          <Step1 />
+        </div>
+        <div style={!formEmail ? { display: 'none' } : undefined}>
+          <Step2 />
+        </div>
       </div>
     </div>
   )
