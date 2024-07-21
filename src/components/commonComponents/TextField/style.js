@@ -36,6 +36,10 @@ export const inputStyle = fullWidth => css`
   &::placeholder {
     color: ${theme.main.tertiaryTextColor};
   }
+
+  @media (max-width: 768px) {
+    padding: ${theme.spacing(2)} ${theme.spacing(3)};
+  }
 `
 
 export const viewPasswordToggleStyle = css`

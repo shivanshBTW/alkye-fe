@@ -18,7 +18,8 @@ export const loginSectionContainer = css`
   padding: ${theme.spacing(12)} ${theme.spacing(11)} ${theme.spacing(19)};
   border-radius: ${theme.spacing(6)};
   @media (max-width: 768px) {
-    padding: ${theme.spacing(6)} ${theme.spacing(5)} ${theme.spacing(9)};
+    row-gap: ${theme.spacing(5)};
+    padding: ${theme.spacing(6)} ${theme.spacing(5)} ${theme.spacing(13)};
   }
 `
 

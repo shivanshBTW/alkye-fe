@@ -79,6 +79,9 @@ export const theme = {
       line-height: 1.2222222222222223;
       letter-spacing: 0.2;
       font-weight: 400;
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
     `,
     h4: css`
       ${fontFamily};
